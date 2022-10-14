@@ -44,9 +44,10 @@ npm run dev
 
 1. ~~Make Model Factory Controller (mfc)~~:  `php artisan make:Web -mfc`
 	1. Create Model (app/models): `php artisan make:model Model-name`
-	2. Create Migration  (database/migrations): `php artisan make:migration create_product_tag_table`
+	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_product_tag_table`
 	3. Create Factory (database/factories): `php artisan make:factory Category`
 	4. Create Controller (app/http/controllers): `App\Http\Controllers\Controller`
+	*first edit the model, then the controller, migration and factory*
 
 2. Create View by placing a file with the `.blade.php` in your application's `resources/views`
 
@@ -70,6 +71,7 @@ password: 12345678
 
 ---
 
+├── = ├ ─ ─
 
 ## tree
 
@@ -81,10 +83,19 @@ password: 12345678
 	├── Exceptions
 		Handler.php
 	├── Http
-		├──Controllers
-		├──Middleware
-		├──Requests
-		Kernel.php
+		├── Controllers
+			├── Auth
+			    Controller.php
+				DirectoryController.php
+				TagController.php
+				TypeController.php
+				WebController.php
+				WebTagController.php
+		├── Middleware
+		├── Requests
+			├── Auth
+				LoginRequest.php
+		    Kernel.php
 	├── Models
 		Directory.php
 		Tag.php
@@ -103,7 +114,7 @@ password: 12345678
 			AppLayout.php
 			GuestLayout.php
 ├── bootstrap
-	├──cache
+	├── cache
 	app.php
 ├── config
 	app.php
@@ -169,7 +180,10 @@ password: 12345678
 	├── Feature
 		├── Auth
 	├── Unit
+		CreateApplication.php
+		TestCase.php
 ├── vendor
+	├──...
 .editorconfig
 .env
 .env.example
