@@ -18,6 +18,9 @@ class DirectoryFactory extends Factory
     {
         return [
             //
+            'name' => fake()->name(),
+            'icon' => fake()->
+            UploadedFile::fake()->image('photo2.jpg')
         ];
     }
 }

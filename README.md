@@ -42,24 +42,24 @@ npm run dev
 
 ### Development part
 
-1. ~~Make Model Factory Controller (mfc)~~:  `php artisan make:Web -mfc`
-	1. Create Model (app/models): `php artisan make:model Model-name`
-	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_product_tag_table`
-	3. Create Factory (database/factories): `php artisan make:factory Category`
-	4. Create Controller (app/http/controllers): `App\Http\Controllers\Controller`
-	*first edit the model, then the controller, migration and factory*
+1. ~~Make Model Migration Factory Controller (mfc)~~: `php artisan make:model Web -mfc`
+	1. ~~Create Model (app/models)~~: `php artisan make:model Web`
+	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_web_table`
+	3. ~~Create Factory (database/factories)~~: `php artisan make:factory WebFactory`
+	4. Create Controller (app/http/controllers): `php artisan make:controller WebController`
 
-2. Create View by placing a file with the `.blade.php` in your application's `resources/views`
+2. Finish Seeder (database/seeders): is created by default
+	`php artisan migrate:fresh --seed`
+*first edit the model, then the controller, migration and factory*
 
-3. Serve the web `php artisan serve`
+3. Create View by placing a file with the `.blade.php` in your application's `resources/views`
 
+4. Serve the web `php artisan serve`
 
 
 ## TODO
 ~~done~~
-- [x] Put same name as the primary key of the pivot table
-- [x] Change Types to 1:n
-- [ ] `php artisan make:migration create_tab_web`
+- [x] done
 
 
 ---
@@ -74,6 +74,7 @@ password: 12345678
 ├── = ├ ─ ─
 
 ## tree
+
 ```sh
 ├── .vscode
 	settings.json

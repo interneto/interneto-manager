@@ -23,5 +23,22 @@ class DatabaseSeeder extends Seeder
 
         // Create Users
 
+        $audio_tag = \App\Models\Tag::factory()->create([
+            "name" => "Audio", 
+        ]);
+
+        $image_tag = \App\Models\Tag::factory()->create([
+            "name" => "Image", 
+        ]);
+
+        $text_tag = \App\Models\Tag::factory()->create([
+            "name" => "Text", 
+        ]);
+
+        $video_tag = \App\Models\Tag::factory()->create([
+            "name" => "Video", 
+        ]);
+
+        
     }
 }

@@ -16,8 +16,17 @@ class WebFactory extends Factory
      */
     public function definition()
     {
+        $beginHttp = 'https//';
+        $middleHttp = fake()->word();
+        $endHttp = '.com/';
         return [
-            //
+            'name' => fake()->name(),
+            'description' => fake()->text(random_int(10, 255)),
+            'url' => $beginHttp . $middleHttp . $endHttp,
+            'thumbnail' => fake()->imageUrl(),
+            'icon' => fake()->image(),
+            'rating' => fake()-> randomInt(1, 5, 1),
+            'date_modified' => fake()->date(),
         ];
     }
 }
