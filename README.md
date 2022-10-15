@@ -74,7 +74,7 @@ password: 12345678
 ├── = ├ ─ ─
 
 ## tree
-
+```sh
 ├── .vscode
 	settings.json
 ├── app
@@ -200,3 +200,4 @@ pstcss.config.js
 README.md
 tailwind.config.js
 vite.config.js
+```
