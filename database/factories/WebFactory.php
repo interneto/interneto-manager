@@ -25,7 +25,7 @@ class WebFactory extends Factory
             'url' => $beginHttp . $middleHttp . $endHttp,
             'thumbnail' => fake()->imageUrl(),
             'icon' => fake()->image(),
-            'rating' => fake()-> randomInt(1, 5, 1),
+            'rating' => fake()->random_int(1, 5),
             'date_modified' => fake()->date(),
         ];
     }
