@@ -47,10 +47,11 @@ npm run dev
 	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_web_table`
 	3. ~~Create Factory (database/factories)~~: `php artisan make:factory WebFactory`
 	4. Create Controller (app/http/controllers): `php artisan make:controller WebController`
+    *order of edition: model, migration, factory, controller*
 
 2. Finish Seeder (database/seeders): is created by default
-	`php artisan migrate:fresh --seed`
-*first edit the model, then the controller, migration and factory*
+    `php artisan make:seeder UserSeeder`
+	`php artisan db:seed` or `php artisan migrate:fresh --seed`
 
 3. Create View by placing a file with the `.blade.php` in your application's `resources/views`
 
@@ -61,17 +62,12 @@ npm run dev
 ~~done~~
 - [x] done
 
-
 ---
 
 ## Log-in credentials
 user: admin
 mail: admin@admin.com
 password: 12345678
-
----
-
-├── = ├ ─ ─
 
 ## tree
 
@@ -80,45 +76,45 @@ password: 12345678
 	settings.json
 ├── app
 	├── Console
-		Kernel.php
+	├──	Kernel.php
 	├── Exceptions
-		Handler.php
+	├──	Handler.php
 	├── Http
 		├── Controllers
 			├── Auth
-			    Controller.php
-				DirectoryController.php
-				TagController.php
-				TypeController.php
-				WebController.php
-				WebTagController.php
+                ├──
+			├── Controller.php
+			├──	DirectoryController.php
+			├──	TagController.php
+			├──	TypeController.php
+			├──	WebController.php
 		├── Middleware
+            ├──
 		├── Requests
 			├── Auth
-				LoginRequest.php
+                ├──
+			├──	LoginRequest.php
 		    Kernel.php
 	├── Models
-		Directory.php
-		Tag.php
-		Type.php
-		User.php
-		Web.php
-		WebTag.php
-	├── Providers
-		AppServiceProvider.php
-		AuthServiceProvider.php
-		BroadcastServiceProvider.php
-		EventServiceProvider.php
-		RouteServiceProvider.php
+        ├──	Directory.php
+        ├──	Tag.php
+        ├──	Type.php
+        ├──	User.php
+        ├──	Web.php
+    ├── Providers
+        ├──	AppServiceProvider.php
+        ├──	AuthServiceProvider.php
+        ├──	BroadcastServiceProvider.php
+        ├──	EventServiceProvider.php
+        ├──	RouteServiceProvider.php
 	├── View
 		├── Components
-			AppLayout.php
-			GuestLayout.php
+		├──	AppLayout.php
+		├──	GuestLayout.php
 ├── bootstrap
 	├── cache
-	app.php
+	├── app.php
 ├── config
-	app.php
 	├── app.php
 	├── auth.php
 	├── broadcasting.php
@@ -137,68 +133,83 @@ password: 12345678
 ├── database
 	├── db-diagram
 	├── factories
-		DirectoryFactory.php
-		TagFactory.php
-		TypeFactory.php
-		UserFactory.php
-		WebFactory.php
-		WebTagFactory.php
+        ├──	DirectoryFactory.php
+        ├──	TagFactory.php
+        ├──	TypeFactory.php
+        ├──	UserFactory.php
+        ├──	WebFactory.php
 	├── migrations
+        ├── 2022_10_12_142400_create_users_table.php
+        ├── 2022_10_12_142400_create_password_resets_table.php
+        ├── 2022_10_12_142400_create_failed_jobs_table.php
+        ├── 2022_10_12_142400_create_personal_acces_tokens_table.php
+        ├── 2022_10_12_142400_create_directories_table.php    
+        ├── 2022_10_12_142400_create_webs_table.php
+        ├── 2022_10_12_142400_create_tags_table.php
+        ├── 2022_10_12_142400_create_types_table.php
+        ├── 2022_10_12_142400_create_webs_tags_table.php
 	├── seeders
+        ├── DatabaseSeeder.php
 ├── lang
 	├──en
-		auth.php
-		pagination.php
-		passwords.php
-		validation.php
+        ├──	auth.php
+        ├──	pagination.php
+        ├──	passwords.php
+        ├──	validation.php
 ├── node_modules
 ├── public
 	├── build
 		├── assets
-		manifest.json
-	favicon.ico
-	index.php
-	robots.txt
+    ├── favicon.ico
+    ├── index.php
+	├──	manifest.json
+    ├──	robots.txt
 ├── resources
-	├── assets
-	├── css
-	├── js
-	├── views
-		├── auth
+    ├── assets
+        ├──	interneto-logo
+    ├── css
+        ├── app.css
+    ├── js
+        ├── app.js
+    ├── views
+    	├── auth
 		├── components
 		├── layouts
+        ├── welcome.blade.php
 ├── routes
-	api.php
-	auth.php
-	channels.php
-	console.php
-	web.php
+    ├── api.php
+    ├── auth.php
+    ├── channels.php
+    ├── console.php
+    ├── web.php
 ├── storage
-	├── app
-	├── framework
-	├── logs
-├──tests
-	├── Feature
-		├── Auth
-	├── Unit
-		CreateApplication.php
-		TestCase.php
+    ├── app
+    ├── framework
+    ├── logs
+├── tests
+    ├── Feature
+        ├── Auth
+        ├── ExampleTest.php
+    ├── Unit
+        ├── ExampleTest.php
+    ├── CreatesApplication.php
+    ├── TestCase.php
 ├── vendor
 	├──...
-.editorconfig
-.env
-.env.example
-.gitattributes
-.gitignore
-artisan
-composer.json
-composer.lock
-docker-compose.yml
-package-lock.json
-package.json
-phpunit.xml
-pstcss.config.js
-README.md
-tailwind.config.js
-vite.config.js
+├── .editorconfig
+├── .env
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── artisan
+├── composer.json
+├── composer.lock
+├── docker-compose.yml
+├── package-lock.json
+├── package.json
+├── phpunit.xml
+├── pstcss.config.js
+├── README.md
+├── tailwind.config.js
+├── vite.config.js
 ```

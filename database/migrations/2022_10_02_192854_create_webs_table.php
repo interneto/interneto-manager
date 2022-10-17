@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('thumbnail'); // screenshot of the web
             $table->string('icon'); // icon of the web
             $table->integer('rating'); // 1 to 5 stars
-            $table->timestamps()->date_modify('date_modified');
+            //$table->timestamps()->date_modify('date_modified'); // date modified
             $table->timestamps(); // created_at
         });
     }
