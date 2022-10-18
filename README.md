@@ -29,15 +29,26 @@ npm run dev
 
 1.2. Cloning the repository `git clone https://github.com/internet0/interneto-manager`
 - Install vendor and the dependencies with `composer install`
-- Copy the example .env.example to .env: `cp .env.example .env`
+- Copy the environment example .env.example to .env (`cp .env.example .env`) and edit the configuration of the .env file with the same configuration as docker:
+```
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+```
+- Uncomment the the lines to use postgres (`extension=pdo_pgsql` `extension=pgsql`) of php.ini in php folder to use that database management system
 
-2. After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command: `php artisan serve`
+2. Now you need to create the database to store the data, you can use:
+- A container with docker. Make `docker compose up -d` to the file docker.compose.yml
+- A virtual machine with a server like CentOS, Ubuntu Server, etc
+- LAMPP (Apache, MySQL, PHPMyAdmin and PHP)
+- XAMPP (Apache-server, MariaDB, PHP and Perl-programming)
 
-3. Once you have started the Artisan development server, your application will be accessible in your web browser at http://localhost:8000. 
+3. After the project has been created, start Laravel's local development server using: `php artisan serve`
 
-4. To execute the server install Postgres as a relational database management system. Change the values in the environment configuration file (.env)
-
-5. Generate a container in docker with `docker compose up` to the file docker.compose.yml
+4. Once you have started the Artisan development server, your application will be accessible in your web browser at http://localhost:8000. 
 
 
 ### Development part
@@ -49,9 +60,9 @@ npm run dev
 	4. Create Controller (app/http/controllers): `php artisan make:controller WebController`
     *order of edition: model, migration, factory, controller*
 
-2. Finish Seeder (database/seeders): is created by default
-    `php artisan make:seeder UserSeeder`
-	`php artisan db:seed` or `php artisan migrate:fresh --seed`
+2. Seeder (database/seeders): is created by default. First  you need to connect to the database and then:
+`php artisan make:seeder UserSeeder`
+`php artisan db:seed` or `php artisan migrate:fresh --seed`
 
 3. Create View by placing a file with the `.blade.php` in your application's `resources/views`
 
