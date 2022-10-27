@@ -60,9 +60,11 @@ DB_PASSWORD=postgres
 	4. Create Controller (app/http/controllers): `php artisan make:controller WebController`
     *order of edition: model, migration, factory, controller*
 
-2. Seeder (database/seeders): is created by default. First  you need to connect to the database and then:
-`php artisan make:seeder UserSeeder`
-`php artisan db:seed` or `php artisan migrate:fresh --seed`
+2. Seeder (database/seeders): is created by default. First you need to connect to the database and then:
+```sh
+php artisan make:seeder UserSeeder
+php artisan migrate:fresh --seed # php artisan db:seed
+```
 
 3. Create View by placing a file with the `.blade.php` in your application's `resources/views`
 
