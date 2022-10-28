@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <x-layout-admin.header.header />
 
     <x-layout-admin.sidebar.sidebar />
 
