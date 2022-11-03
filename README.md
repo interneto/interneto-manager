@@ -70,17 +70,7 @@ php artisan migrate:fresh --seed # php artisan db:seed
 
 4. Serve the web `php artisan serve`
 
-
-## TODO
-~~done~~
-- [x] done
-
 ---
-
-## Log-in credentials
-user: admin
-mail: admin@admin.com
-password: 12345678
 
 ## tree
 
