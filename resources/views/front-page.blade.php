@@ -16,10 +16,11 @@
 <body>
     <div class="row">
         <div class="col-sm-4">
-            <x-layout-admin.sidebar.categories />
+            <x-layout-admin.sidebar.sidebar />
         </div>
         <div class="col-sm-8">
             <x-layout-admin.header.header />
+            <x-layout-admin.menu.menu />
         </div>
     </div>
 </body>
