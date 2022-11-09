@@ -22,6 +22,8 @@
         <div class="col-sm-8">
             <x-layout-admin.header.header />
             <x-layout-admin.menu.menu />
+            <x-layout-admin.menu.box-elements />
+
         </div>
     </div>
 </body>
