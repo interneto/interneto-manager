@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_directory');
             $table->foreignId('id_tag');
-            $table->foreignId('id_type');
             $table->string('name');
             $table->text('description');
             $table->string('url');
+            $table->string('type'); // types of webs
             $table->string('thumbnail'); // screenshot of the web
             $table->string('icon'); // icon of the web
             $table->integer('rating'); // 1 to 5 stars

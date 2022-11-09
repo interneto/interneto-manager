@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
@@ -20,12 +25,7 @@ Route::get('/', function () {
     return view('front-page');
 });
 
-Route::get('/front-page', function () {
-    return view('front-page');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/admin/new-link', [WebController::class, 'create'])->name('create-link');
+//
 
 require __DIR__.'/auth.php';

@@ -23,6 +23,7 @@
             <x-layout-admin.header.header />
             <x-layout-admin.menu.menu />
             <x-layout-admin.menu.box-elements />
+            <x-layout-admin.menu.form />
 
         </div>
     </div>
