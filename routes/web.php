@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Directory;
 use App\Http\Controllers\WebController;
 
 /*
@@ -22,10 +23,12 @@ Route::get('/', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
     }
-    return view('front-page');
+    return view('front-page', [
+        "directories" => Directory::all(),
+    ]);
 });
 
 Route::post('/admin/new-link', [WebController::class, 'create'])->name('create-link');
-//
+
 
 require __DIR__.'/auth.php';

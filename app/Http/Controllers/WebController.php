@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function create(Request $request) {
+        //dd($request);
         $validated = $request->validate([
-            "name" => "required|max:255|unique:name",
-            "link" => "required|max:255|unique:link",
-            "category" => "max:255",
+            "name" => "required|max:255|unique:webs,name",
+            "description" => "",
+            "link" => "required|max:255",
+            "directory" => "max:255",
             "tag" => "max:255",
-            "type" => "string"
+            "type" => "string|max:255"
         ]);
 
         $tagName = $validated['tag'];
@@ -25,7 +27,14 @@ class WebController extends Controller
         }
         $validated['id_tag'] = $tag->id;
 
-        Web::create($validated);
+        //
+
+        Web::create([
+            "link" => $validated['link'],
+            "id_directory" => $validated['id_directory'],
+            "id_tag" => $validated['id_tag'],
+            "type" => $validated['type'],
+        ]);
 
         return redirect(route('/front-page'));
     }
