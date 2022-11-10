@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
 
         $directory = Directory::create([
             'name' => 'Unsorted',
-            'id_user' => $user->id,
+            'user_id' => $user->id,
             'icon' => 'bi bi-funnel-fill',
             'color' => '#000000',
         ]);

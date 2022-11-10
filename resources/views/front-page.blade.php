@@ -22,7 +22,7 @@
             <select name="directory-id" id="directory-id" class="form-select">
                 <option value="">-- Selecciona una categoría --</option>
                 @foreach ($directories as $directory)
-                    <option value="{{ $directory->id }}" {{ $directory->id == old('id_directory') ? 'selected' : '' }}>
+                    <option value="{{ $directory->id }}" {{ $directory->id == old('directory_id') ? 'selected' : '' }}>
                         {{ $directory->name }}
                     </option>
                 @endforeach
@@ -45,9 +45,9 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Crear link</button>
+        <button type="submit" class="btn btn-primary">Create link</button>
     </form>
 
-    <x-layout-admin.menu.box-elements />
+    <x-layout-admin.menu.box-elements :directories='$directories' />
 
 </x-layout>

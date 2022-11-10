@@ -47,7 +47,7 @@
         "comment": "",
         "columns": [
           {
-            "name": "id_user",
+            "name": "user_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -270,7 +270,7 @@
             "id": "fe10c2d7-e8de-4884-b023-48abcc27cb98"
           },
           {
-            "name": "id_user",
+            "name": "user_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -548,7 +548,7 @@
             "id": "a33623eb-266d-4621-ab64-ab44527d4c3a"
           },
           {
-            "name": "id_directory",
+            "name": "directory_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",

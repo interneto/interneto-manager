@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('webs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_directory')->nullable();
+            $table->foreignId('directory_id')->nullable();
             $table->foreignId('id_tag');
 
             $table->string('name');    // name of websites

@@ -24,9 +24,11 @@ Route::get('/', function () {
         return redirect(route('login'));
     }
     return view('front-page', [
-        "directories" => Directory::where('id_user', '=', auth()->user()->id)->get(),
+        // "directories" => Directory::where('user_id', '=', auth()->user()->id)->get(),
+        "directories" => auth()->user()->directories,
+
     ]);
-});
+})->name('front-page');
 
 Route::post('/admin/new-link', [WebController::class, 'create'])->name('create-link');
 
