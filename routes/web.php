@@ -24,11 +24,10 @@ Route::get('/', function () {
         return redirect(route('login'));
     }
     return view('front-page', [
-        "directories" => Directory::all(),
+        "directories" => Directory::where('id_user', '=', auth()->user()->id)->get(),
     ]);
 });
 
 Route::post('/admin/new-link', [WebController::class, 'create'])->name('create-link');
-
 
 require __DIR__.'/auth.php';

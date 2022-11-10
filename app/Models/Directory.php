@@ -9,7 +9,7 @@ class Directory extends Model
 {
     use HasFactory;
 
-    protected $guarted = [];
+    protected $guarded = [];
 
     public function user() {
         return $this->belongsTo(User::class);

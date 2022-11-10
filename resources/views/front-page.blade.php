@@ -3,7 +3,6 @@
     <x-layout-admin.header.header />
 
     <x-layout-admin.menu.menu />
-    <x-layout-admin.menu.box-elements />
 
     <form action="{{ route('create-link') }}" method="post">
         @csrf
@@ -23,7 +22,7 @@
             <select name="directory-id" id="directory-id" class="form-select">
                 <option value="">-- Selecciona una categoría --</option>
                 @foreach ($directories as $directory)
-                    <option value="{{ $directory->id }}" {{ $directory->id == old('directory-id') ? 'selected' : '' }}>
+                    <option value="{{ $directory->id }}" {{ $directory->id == old('id_directory') ? 'selected' : '' }}>
                         {{ $directory->name }}
                     </option>
                 @endforeach
@@ -48,5 +47,7 @@
 
         <button type="submit" class="btn btn-primary">Crear link</button>
     </form>
+
+    <x-layout-admin.menu.box-elements />
 
 </x-layout>
