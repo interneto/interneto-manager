@@ -24,11 +24,12 @@ Route::get('/', function () {
         return redirect(route('login'));
     }
     return view('front-page', [
-        // "directories" => Directory::where('user_id', '=', auth()->user()->id)->get(),
+        //"directories" => Directory::where('user_id', '=', auth()->user()->id()->get()),
         "directories" => auth()->user()->directories,
 
     ]);
 })->name('front-page');
+
 
 Route::post('/admin/new-link', [LinkController::class, 'create'])->name('create-link');
 

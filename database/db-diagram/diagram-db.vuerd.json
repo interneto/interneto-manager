@@ -1369,7 +1369,7 @@
           "y": 825.1932,
           "direction": "left"
         },
-        "constraintName": "fk_directories_to_linksites",
+        "constraintName": "fk_directories_to_links",
         "visible": true,
         "id": "6db0cf10-783e-4cbd-b06e-30d211e80c5d"
       },

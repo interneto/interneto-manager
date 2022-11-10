@@ -76,48 +76,48 @@ php artisan migrate:fresh --seed # php artisan db:seed
 
 ```sh
 ├── .vscode
-	settings.json
-├── app
-	├── Console
+├── settings.json
+├── app/
+	├── Console/
 	├──	Kernel.php
-	├── Exceptions
+	├── Exceptions/
 	├──	Handler.php
-	├── Http
-		├── Controllers
+	├── Http/
+		├── Controllers/
 			├── Auth
-                ├──
+                └──
 			├── Controller.php
 			├──	DirectoryController.php
 			├──	TagController.php
 			├──	TypeController.php
-			├──	LinkController.php
-		├── Middleware
-            ├──
-		├── Requests
+			└──	LinkController.php
+		├── Middleware/
+            └──
+		├── Requests/
 			├── Auth
-                ├──
+                └──
 			├──	LoginRequest.php
-		    Kernel.php
-	├── Models
+		    └── Kernel.php
+	├── Models/
         ├──	Directory.php
         ├──	Tag.php
         ├──	Type.php
         ├──	User.php
         ├──	Link.php
-    ├── Providers
+    ├── Providers/
         ├──	AppServiceProvider.php
         ├──	AuthServiceProvider.php
         ├──	BroadcastServiceProvider.php
         ├──	EventServiceProvider.php
         ├──	RouteServiceProvider.php
-	├── View
+	└──  View/
 		├── Components
 		├──	AppLayout.php
-		├──	GuestLayout.php
-├── bootstrap
+		└── GuestLayout.php
+├── bootstrap/
 	├── cache
 	├── app.php
-├── config
+├── config/
 	├── app.php
 	├── auth.php
 	├── broadcasting.php
@@ -133,15 +133,15 @@ php artisan migrate:fresh --seed # php artisan db:seed
 	├── services.php
 	├── session.php
 	└── view.php
-├── database
-	├── db-diagram
-	├── factories
+├── database/
+	├── db-diagram/
+	├── factories/
         ├──	DirectoryFactory.php
         ├──	TagFactory.php
         ├──	TypeFactory.php
         ├──	UserFactory.php
         ├──	LinkFactory.php
-	├── migrations
+	├── migrations/
         ├── 2022_10_12_142400_create_users_table.php
         ├── 2022_10_12_142400_create_password_resets_table.php
         ├── 2022_10_12_142400_create_failed_jobs_table.php
@@ -150,55 +150,55 @@ php artisan migrate:fresh --seed # php artisan db:seed
         ├── 2022_10_12_142400_create_links_table.php
         ├── 2022_10_12_142400_create_tags_table.php
         ├── 2022_10_12_142400_create_types_table.php
-        ├── 2022_10_12_142400_create_links_tags_table.php
-	├── seeders
-        ├── DatabaseSeeder.php
-├── lang
-	├──en
+        └── 2022_10_12_142400_create_links_tags_table.php
+	└── seeders/
+        └── DatabaseSeeder.php
+├── lang/
+	├──en/
         ├──	auth.php
         ├──	pagination.php
         ├──	passwords.php
-        ├──	validation.php
-├── node_modules
-├── public
-	├── build
-		├── assets
+        └── validation.php
+├── node_modules/
+├── public/
+	├── build/
+		└── assets/
     ├── favicon.ico
     ├── index.php
 	├──	manifest.json
-    ├──	robots.txt
-├── resources
-    ├── assets
+    └── robots.txt
+├── resources/
+    ├── assets/
         ├──	interneto-logo
-    ├── css
+    ├── css/
         ├── app.css
-    ├── js
+    ├── js/
         ├── app.js
-    ├── views
+    └──  views/
     	├── auth
 		├── components
 		├── layouts
-        ├── welcome.blade.php
-├── routes
+        └── welcome.blade.php
+├── routes/
     ├── api.php
     ├── auth.php
     ├── channels.php
     ├── console.php
-    ├── web.php
-├── storage
+    └── web.php
+├── storage/
     ├── app
     ├── framework
-    ├── logs
-├── tests
+    └──  logs
+├── tests/
     ├── Feature
         ├── Auth
-        ├── ExampleTest.php
-    ├── Unit
+        └── ExampleTest.php
+    ├── Unit/
         ├── ExampleTest.php
     ├── CreatesApplication.php
-    ├── TestCase.php
-├── vendor
-	├──...
+    └──  TestCase.php
+├── vendor/
+	└── ...
 ├── .editorconfig
 ├── .env
 ├── .env.example
@@ -214,5 +214,5 @@ php artisan migrate:fresh --seed # php artisan db:seed
 ├── pstcss.config.js
 ├── README.md
 ├── tailwind.config.js
-├── vite.config.js
+└── vite.config.js
 ```
