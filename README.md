@@ -53,11 +53,11 @@ DB_PASSWORD=postgres
 
 ### Development part
 
-1. ~~Make Model Migration Factory Controller (mfc)~~: `php artisan make:model Web -mfc`
-	1. ~~Create Model (app/models)~~: `php artisan make:model Web`
-	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_web_table`
-	3. ~~Create Factory (database/factories)~~: `php artisan make:factory WebFactory`
-	4. Create Controller (app/http/controllers): `php artisan make:controller WebController`
+1. ~~Make Model Migration Factory Controller (mfc)~~: `php artisan make:model Link -mfc`
+	1. ~~Create Model (app/models)~~: `php artisan make:model Link`
+	2. ~~Create Migration  (database/migrations)~~: `php artisan make:migration create_link_table`
+	3. ~~Create Factory (database/factories)~~: `php artisan make:factory LinkFactory`
+	4. Create Controller (app/http/controllers): `php artisan make:controller LinkController`
     *order of edition: model, migration, factory, controller*
 
 2. Seeder (database/seeders): is created by default. First you need to connect to the database and then:
@@ -90,7 +90,7 @@ php artisan migrate:fresh --seed # php artisan db:seed
 			├──	DirectoryController.php
 			├──	TagController.php
 			├──	TypeController.php
-			├──	WebController.php
+			├──	LinkController.php
 		├── Middleware
             ├──
 		├── Requests
@@ -103,7 +103,7 @@ php artisan migrate:fresh --seed # php artisan db:seed
         ├──	Tag.php
         ├──	Type.php
         ├──	User.php
-        ├──	Web.php
+        ├──	Link.php
     ├── Providers
         ├──	AppServiceProvider.php
         ├──	AuthServiceProvider.php
@@ -140,17 +140,17 @@ php artisan migrate:fresh --seed # php artisan db:seed
         ├──	TagFactory.php
         ├──	TypeFactory.php
         ├──	UserFactory.php
-        ├──	WebFactory.php
+        ├──	LinkFactory.php
 	├── migrations
         ├── 2022_10_12_142400_create_users_table.php
         ├── 2022_10_12_142400_create_password_resets_table.php
         ├── 2022_10_12_142400_create_failed_jobs_table.php
         ├── 2022_10_12_142400_create_personal_acces_tokens_table.php
         ├── 2022_10_12_142400_create_directories_table.php    
-        ├── 2022_10_12_142400_create_webs_table.php
+        ├── 2022_10_12_142400_create_links_table.php
         ├── 2022_10_12_142400_create_tags_table.php
         ├── 2022_10_12_142400_create_types_table.php
-        ├── 2022_10_12_142400_create_webs_tags_table.php
+        ├── 2022_10_12_142400_create_links_tags_table.php
 	├── seeders
         ├── DatabaseSeeder.php
 ├── lang

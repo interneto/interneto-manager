@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Web;
+use App\Models\Link;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class WebController extends Controller
+class LinkController extends Controller
 {
     public function new_form(Request $request)
     {
@@ -33,7 +33,7 @@ class WebController extends Controller
         }
         $validated['id_tag'] = $tag->id;
 
-        Web::create([
+        Link::create([
             "name" => $validated['name'],
             "link" => $validated['link'],
             "directory_id" => $validated['directory-id'],

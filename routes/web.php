@@ -30,6 +30,6 @@ Route::get('/', function () {
     ]);
 })->name('front-page');
 
-Route::post('/admin/new-link', [WebController::class, 'create'])->name('create-link');
+Route::post('/admin/new-link', [LinkController::class, 'create'])->name('create-link');
 
 require __DIR__.'/auth.php';

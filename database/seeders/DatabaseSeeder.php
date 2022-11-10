@@ -29,9 +29,9 @@ class DatabaseSeeder extends Seeder
             "name" => "Audio",
         ]);
 
-        $audio_webs = \App\Models\Web::factory(10)->create();
-        foreach ($audio_webs as $web) {
-            $web->tags()->attach($audio_tag);
+        $audio_links = \App\Models\Link::factory(10)->create();
+        foreach ($audio_links as $link) {
+            $link->tags()->attach($audio_tag);
         }
 
         // Tags of image
@@ -39,17 +39,17 @@ class DatabaseSeeder extends Seeder
             "name" => "Image",
         ]);
 
-        $image_webs = \App\Models\Web::factory(10)->create();
-        foreach ($image_webs as $image) {
-            $web->tags()->attach($image_tag);
+        $image_links = \App\Models\Link::factory(10)->create();
+        foreach ($image_links as $image) {
+            $link->tags()->attach($image_tag);
         }
 
         // Tags of text
         $text_tag = \App\Models\Tag::factory(10)->create([
             "name" => "Text",
         ]);
-        foreach ($image_webs as $image) {
-            $web->tags()->attach($image_tag);
+        foreach ($image_links as $image) {
+            $link->tags()->attach($image_tag);
         }
 
         // Tag of video
@@ -57,9 +57,9 @@ class DatabaseSeeder extends Seeder
             "name" => "Video",
         ]);
 
-        $video_webs = \App\Models\Web::factory(10)->create();
-        foreach ($video_webs as $web) {
-            $web->tags()->attach($video_tag);
+        $video_links = \App\Models\Link::factory(10)->create();
+        foreach ($video_links as $link) {
+            $link->tags()->attach($video_tag);
         }
 
         /*
@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
         // Directory
 
 
-        // Webs
+        // links
 
 
         // Types

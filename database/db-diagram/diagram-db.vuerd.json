@@ -441,7 +441,7 @@
         "columns": [
           {
             "name": "id_type",
-            "comment": "Types of webs: audio, article, image, rss, video",
+            "comment": "Types of links: audio, article, image, rss, video",
             "dataType": "SERIAL",
             "default": "",
             "option": {
@@ -463,7 +463,7 @@
             "id": "7ac5dc16-6c41-48a9-a778-ae64825588b9"
           },
           {
-            "name": "id_web",
+            "name": "id_link",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -521,11 +521,11 @@
         "id": "f0003a9e-429a-43d9-87c4-ff5578c0605b"
       },
       {
-        "name": "Webs",
+        "name": "links",
         "comment": "",
         "columns": [
           {
-            "name": "id_web",
+            "name": "id_link",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -572,7 +572,7 @@
           },
           {
             "name": "id_type",
-            "comment": "Types of webs: audio, article, image, rss, video",
+            "comment": "Types of links: audio, article, image, rss, video",
             "dataType": "SERIAL",
             "default": "",
             "option": {
@@ -790,11 +790,11 @@
         "id": "2eb9108c-54c4-489b-beff-1323e799009b"
       },
       {
-        "name": "Webs_tags",
+        "name": "links_tags",
         "comment": "",
         "columns": [
           {
-            "name": "id_tag_web",
+            "name": "id_tag_link",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -840,7 +840,7 @@
             "id": "20fddd13-c4f9-41af-a389-4bbf5f404443"
           },
           {
-            "name": "id_web",
+            "name": "id_link",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -1369,7 +1369,7 @@
           "y": 825.1932,
           "direction": "left"
         },
-        "constraintName": "fk_directories_to_websites",
+        "constraintName": "fk_directories_to_linksites",
         "visible": true,
         "id": "6db0cf10-783e-4cbd-b06e-30d211e80c5d"
       },
@@ -1395,7 +1395,7 @@
           "y": 416.1754,
           "direction": "top"
         },
-        "constraintName": "fk_tags_to_tags_webs",
+        "constraintName": "fk_tags_to_tags_links",
         "visible": true,
         "id": "a10f7e23-0561-4866-8433-cbe6e0279bf2"
       },
@@ -1421,7 +1421,7 @@
           "y": 972.4432,
           "direction": "bottom"
         },
-        "constraintName": "fk_types_webs_to_webs",
+        "constraintName": "fk_types_links_to_links",
         "visible": true,
         "id": "38c68586-abd9-498c-871e-eb39d4f66bd1"
       },
@@ -1447,7 +1447,7 @@
           "y": 546.6754000000001,
           "direction": "bottom"
         },
-        "constraintName": "fk_webs_to_tags_webs",
+        "constraintName": "fk_links_to_tags_links",
         "visible": true,
         "id": "1c7f0b5b-1f4d-4ca1-9f51-77940f6f85f4"
       }

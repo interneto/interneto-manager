@@ -11,7 +11,7 @@ class Tag extends Model
 
     protected $guarded = [];
 
-    public function webs() {
-        return $this->belongsToMany(Web::class);
+    public function links() {
+        return $this->belongsToMany(Link::class);
     }
 }

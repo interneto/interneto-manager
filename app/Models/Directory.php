@@ -15,7 +15,7 @@ class Directory extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function webs() {
-        return $this->hasMany(Web::class);
+    public function links() {
+        return $this->hasMany(Link::class);
     }
 }

@@ -5,7 +5,7 @@
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
             aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" class="rounded-circle" width="32" height="32">
-            <span>$username</span>
+            <span>{{ auth()->user()->name }}</span>
         </a>
         <ul class="dropdown-menu text-small shadow">
             <li><a class="dropdown-item" href="#">New project...</a></li>

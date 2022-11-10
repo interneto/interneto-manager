@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('webs', function (Blueprint $table) {
+        Schema::create('links', function (Blueprint $table) {
             $table->id();
             $table->foreignId('directory_id')->nullable();
             $table->foreignId('id_tag');
 
-            $table->string('name');    // name of websites
-            $table->text('description')->nullable(); // description of webs
-            $table->string('link');  // link of websites
-            $table->string('type'); // types of webs
-            $table->string('thumbnail')->nullable(); // screenshot of the web
-            $table->string('icon')->nullable(); // icon of the web
+            $table->string('name');    // name of links
+            $table->text('description')->nullable(); // description of link
+            $table->string('link');  // link
+            $table->string('type'); // types of links
+            $table->string('thumbnail')->nullable(); // screenshot of the link
+            $table->string('icon')->nullable(); // icon of the link
             $table->integer('rating')->nullable(); // 1 to 5 stars
             //$table->timestamps()->date_modify('date_modified'); // date modified
             $table->timestamps(); // created_at
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('webs');
+        Schema::dropIfExists('links');
     }
 };

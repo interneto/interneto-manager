@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('web_tags', function (Blueprint $table) {
+        Schema::create('link_tags', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_tag');
-            $table->foreignId('id_web');
+            $table->foreignId('id_link');
             //$table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('web_tags');
+        Schema::dropIfExists('link_tags');
     }
 };
