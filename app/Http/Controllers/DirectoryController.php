@@ -18,15 +18,15 @@ class DirectoryController extends Controller
     public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
-            "user-id" => "max:255",
-            "name" => "required|max:255|unique:links,name",
-            "directory-id" => "max:255",
+            "user_id" => "max:255",
+            "name" => "required|max:255|unique:directories,name",
+            "directory_id" => "max:255",
         ]);
 
         Directory::create([
-            "user_id" => $validated['user-id'],
+            "user_id" => $validated['user_id'],
             "name" => $validated['name'],
-            "directory_id" => $validated['directory-id'],
+            "directory_id" => $validated['directory_id']
         ]);
 
         return redirect(route('front-page'));

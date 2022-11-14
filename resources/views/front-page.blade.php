@@ -1,6 +1,7 @@
 <x-layout>
     <x-layout-admin.header.header />
     <x-layout-admin.menu.menu />
+
     <form action="{{ route('create-link') }}" method="post">
         @csrf
         <div class="form-floating mb-3 h-100">
@@ -13,7 +14,7 @@
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Directory</span>
-            <select name="directory-id" id="directory-id" class="form-select">
+            <select name="directory_id" id="directory_id" class="form-select">
                 <option value="">-- Selecciona una categoría --</option>
                 @foreach ($directories as $directory)
                     <option value="{{ $directory->id }}" {{ $directory->id == old('directory_id') ? 'selected' : '' }}>
@@ -49,6 +50,8 @@
         </div>
         <button type="submit" class="btn btn-primary">Create directory</button>
     </form>
-
+    
+    <br>
+    
     <x-layout-admin.menu.box-elements :directories='$directories' />
 </x-layout>

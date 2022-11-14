@@ -22,7 +22,7 @@ class LinkController extends Controller
             "name" => "required|max:255|unique:links,name",
             "description" => "",
             "link" => "required|max:255",
-            "directory-id" => "max:255",
+            "directory_id" => "max:255",
             "tag" => "max:255",
             "type" => "string|max:255"
         ]);
@@ -38,7 +38,7 @@ class LinkController extends Controller
         Link::create([
             "name" => $validated['name'],
             "link" => $validated['link'],
-            "directory_id" => $validated['directory-id'],
+            "directory_id" => $validated['directory_id'],
             "id_tag" => $validated['id_tag'],
             "type" => $validated['type'],
         ]);
