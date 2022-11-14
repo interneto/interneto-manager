@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\DirectoryController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Directory;
-use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +15,30 @@ use App\Http\Controllers\WebController;
 |
 */
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', function () {
+
+Route::get('/front-page', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
     }
-    return view('front-page', [
-        //"directories" => Directory::where('user_id', '=', auth()->user()->id()->get()),
-        "directories" => auth()->user()->directories,
-
-    ]);
+    else { 
+        return view('front-page', [
+            //"directories" => Directory::where('user_id', '=', auth()->user()->id()->get()),
+            "directories" => auth()->user()->directories,
+        ]);
+    }
 })->name('front-page');
 
 
-Route::post('/admin/new-link', [LinkController::class, 'create'])->name('create-link');
+// Route::get('/create-link', [LinkController::class, 'new_form'])->name('new-link-form');
+Route::post('/create-link', [LinkController::class, 'create'])->name('create-link');
+
+// Route::get('/admin/new-link', [DirectoryController::class, 'new-form'])->name('create-directory');
+Route::post('/admin/new-link', [DirectoryController::class, 'create'])->name('create-directory');
+
 
 require __DIR__.'/auth.php';

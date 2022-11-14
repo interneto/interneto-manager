@@ -8,16 +8,18 @@ use Illuminate\Http\Request;
 
 class LinkController extends Controller
 {
+    /*
     public function new_form(Request $request)
     {
-        return view('admin.new-product-form', [
+        return view('admin.new-link-form', [
         ]);
     }
+    */
 
     public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
-            "name" => "required|max:255|unique:webs,name",
+            "name" => "required|max:255|unique:links,name",
             "description" => "",
             "link" => "required|max:255",
             "directory-id" => "max:255",
@@ -43,5 +45,4 @@ class LinkController extends Controller
 
         return redirect(route('front-page'));
     }
-
 }

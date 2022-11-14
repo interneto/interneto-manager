@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('name');
-            $table->string('icon');
-            $table->string('color');
+            $table->string('icon')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();  // fecha de creación tal vez sobra
         });
     }
