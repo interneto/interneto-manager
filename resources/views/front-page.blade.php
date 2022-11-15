@@ -2,56 +2,37 @@
     <x-layout-admin.header.header />
     <x-layout-admin.menu.menu />
 
-    <form action="{{ route('create-link') }}" method="post">
-        @csrf
-        <div class="form-floating mb-3 h-100">
-            <input type="text" class="form-control h-100" name="name" id="name" placeholder="Interneto.dev"
-                value="{{ old('name') }}">
-        </div>
-        <div class="form-floating mb-3 h-100">
-            <input type="text" class="form-control h-100" name="link" id="link"
-                placeholder="https://interneto.dev/" value="{{ old('link') }}">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Directory</span>
-            <select name="directory_id" id="directory_id" class="form-select">
-                <option value="">-- Selecciona una categoría --</option>
-                @foreach ($directories as $directory)
-                    <option value="{{ $directory->id }}" {{ $directory->id == old('directory_id') ? 'selected' : '' }}>
-                        {{ $directory->name }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-        <div>
-            <!--<label for="tag">Tag</label>-->
-            <input class="form-control" type="text" name="tag" id="tag" placeholder="#tag"
-                value="{{ old('tag') }}">
-        </div>
-        <br>
-        <div>
-            <!-- <label for="type">Type</label> -->
-            <select name="type" id="type">
-                <option value="audio">Audio</option>
-                <option value="document">Document</option>
-                <option value="image">Image</option>
-                <option value="video">Video</option>
-            </select>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Create link</button>
-    </form>
-    <br>
+    <div>
+        <a href="{{route('new-link')}}">
+            <button type="button" class="btn btn-outline-primary float-right">Create link
+            </button>
+        </a>
+    </div>
 
-    <form action="{{ route('create-directory') }}" method="post">
+    <div>
+        <a href="{{route('new-directory')}}">
+            <button type="button" class="btn btn-outline-primary float-right">Create directory
+            </button>
+        </a>
+    </div>
+
+    <div>
+        @foreach ($directories as $directory)
         <div>
-            <input type="text" class="form-control h-100" name="directory" id="directory" placeholder="Directory"
-                value="{{ old('directory') }}">
+            <h2>{{$directory->name}}</h2>
+            @foreach ($directory->links as $link)
+            <div class="item">
+                <div class="thumbnail">Thumbnail: {{$link->thumbnail}}</div>
+                <div class="title">Title: {{$link->name}}</div>
+                <div class="description">Description: {{$link->description}}</div>
+                <div class="link">Link: {{$link->link}}</div>
+                <div class="tags">Tag: {{$link->tag}}</div>
+                <div class="time-saved">Time saved: {{$link->timestamp}}</div>
+            </div>
+            @endforeach
         </div>
-        <button type="submit" class="btn btn-primary">Create directory</button>
-    </form>
     
-    <br>
-    
-    <x-layout-admin.menu.box-elements :directories='$directories' />
+        @endforeach
+    </div>
+
 </x-layout>

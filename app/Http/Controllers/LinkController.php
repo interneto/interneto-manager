@@ -43,6 +43,6 @@ class LinkController extends Controller
             "type" => $validated['type'],
         ]);
 
-        return redirect(route('front-page'));
+        return redirect(route('new-link'));
     }
 }

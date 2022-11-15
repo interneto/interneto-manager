@@ -24,21 +24,29 @@ Route::get('/dashboard', function () {
 Route::get('/front-page', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
-    }
-    else { 
+    } else {
         return view('front-page', [
-            //"directories" => Directory::where('user_id', '=', auth()->user()->id()->get()),
-            "directories" => auth()->user()->directories,
+            'directories' => auth()->user()->directories,
         ]);
     }
 })->name('front-page');
 
 
-// Route::get('/create-link', [LinkController::class, 'new_form'])->name('new-link-form');
-Route::post('/create-link', [LinkController::class, 'create'])->name('create-link');
+Route::get('/new-link', function () {
+    return view('new-link', [
+        "directories" => auth()->user()->directories,
+    ]);
+})->name('new-link');
 
-// Route::get('/admin/new-link', [DirectoryController::class, 'new-form'])->name('create-directory');
-Route::post('/admin/new-link', [DirectoryController::class, 'create'])->name('create-directory');
+
+Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form');
+
+Route::get('/new-directory', function () {
+    return view('new-directory');
+})->name('new-directory');
+Route::post('/new-directory', function () {
+    return view('new-directory');
+})->name('new-directory-form');
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
