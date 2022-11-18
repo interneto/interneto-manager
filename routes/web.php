@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return view('home');
+})->name('home');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,15 +42,12 @@ Route::get('/new-link', function () {
     ]);
 })->name('new-link');
 
-
 Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form');
 
-Route::get('/new-directory', function () {
-    return view('new-directory');
-})->name('new-directory');
-Route::post('/new-directory', function () {
-    return view('new-directory');
-})->name('new-directory-form');
+Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory-form');
+
+Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory');
+
 
 
 require __DIR__ . '/auth.php';

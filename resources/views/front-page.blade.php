@@ -10,7 +10,7 @@
     </div>
 
     <div>
-        <a href="{{route('new-directory')}}">
+        <a href="{{route('new-directory-form')}}">
             <button type="button" class="btn btn-outline-primary float-right">Create directory
             </button>
         </a>
@@ -31,7 +31,7 @@
             </div>
             @endforeach
         </div>
-    
+
         @endforeach
     </div>
 

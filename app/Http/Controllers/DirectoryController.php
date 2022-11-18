@@ -15,7 +15,7 @@ class DirectoryController extends Controller
     }
     */
 
-    public function create(Request $request) {
+    public function store(Request $request) {
         //dd($request);
         $validated = $request->validate([
             "user_id" => "max:255",
@@ -23,12 +23,12 @@ class DirectoryController extends Controller
             "directory_id" => "max:255",
         ]);
 
-        Directory::create([
-            "user_id" => $validated['user_id'],
-            "name" => $validated['name'],
-            "directory_id" => $validated['directory_id']
-        ]);
+        Directory::create($validated);
 
         return redirect(route('front-page'));
+    }
+
+    public function create(Request $request) {
+        return view('new-directory', ['directories'=>auth()->user()->directories]);
     }
 }
