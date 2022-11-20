@@ -1,9 +1,9 @@
-<x-layout>
+<x-manager-layout>
     <x-layout-admin.header.header />
     <x-layout-admin.menu.menu />
 
     <div>
-        <a href="{{route('new-link')}}">
+        <a href="{{route('new-link-form')}}">
             <button type="button" class="btn btn-outline-primary float-right">Create link
             </button>
         </a>
@@ -35,4 +35,4 @@
         @endforeach
     </div>
 
-</x-layout>
+</x-manager-layout>

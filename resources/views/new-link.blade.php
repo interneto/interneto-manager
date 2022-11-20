@@ -1,4 +1,4 @@
-<x-layout>
+<x-manager-layout>
     <x-layout-admin.header.header />
     <x-layout-admin.menu.menu />
 
@@ -39,4 +39,4 @@
         <button type="submit" class="btn btn-primary">Create link</button>
     </form>
 
-</x-layout>
+</x-manager-layout>

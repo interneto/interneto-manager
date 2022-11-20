@@ -19,6 +19,21 @@ Route::get('/', function() {
     return view('home');
 })->name('home');
 
+Route::get('/app', function() {
+    return view('interneto-app');
+})->name('interneto-app');
+
+Route::get('/links', function() {
+    return view('interneto-links');
+})->name('interneto-links');
+
+Route::get('/blog', function() {
+    return view('blog');
+})->name('blog');
+
+Route::get('/about', function() {
+    return view('about');
+})->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

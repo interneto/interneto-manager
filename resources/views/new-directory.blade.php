@@ -1,4 +1,4 @@
-<x-layout>
+<x-manager-layout>
     <x-layout-admin.header.header />
     <x-layout-admin.menu.menu />
 
@@ -30,4 +30,4 @@
 
     <br>
 
-</x-layout>
+</x-manager-layout>
