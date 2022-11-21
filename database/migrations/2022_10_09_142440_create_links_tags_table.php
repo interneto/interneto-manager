@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('link_tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_tag');
+            $table->foreignId('tag_id');
             $table->foreignId('id_link');
             //$table->timestamps();
         });

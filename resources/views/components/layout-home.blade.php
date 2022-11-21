@@ -41,7 +41,7 @@
 
     {{ $slot }}
 
-    <footer class="container py-3 my-4">
+    <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="{{route('home')}}" class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">App</a></li>
@@ -50,7 +50,7 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
         </ul>
 
-        <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <div class="d-flex flex-column flex-sm-row justify-content-between mx-5">
             <p class="text-center text-muted">© 2022 Interneto. Self hosting bookmark manager.</p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3">

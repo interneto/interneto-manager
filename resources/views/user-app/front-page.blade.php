@@ -1,7 +1,7 @@
 <x-layout-manager>
     <x-layout-user.header />
 
-    <div>
+    <div class="mx-2 my-4">
         <a href="{{route('new-link-form')}}">
             <button type="button" class="btn btn-outline-primary float-right">
                 Create link
@@ -31,16 +31,16 @@
                         <div class="card-body">
                             <p class="card-text">{{$link->name}}</p>
                             <p class="card-text">{{$link->description}}</p>
-                            <p class="card-text">{{$link->link}}</p>
-                            <p class="card-text">{{$link->name}}</p>
+                            <p class="card-text">{{$link->uri}}</p>
+                            <p class="card-text">Tag</p>
                             <p class="card-text">{{$link->type}}</p>
-                            <p class="card-text">{{$link->created_at}}</p>
+                            <p class="card-text"></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">{{$link->created_at}}</small>
                             </div>
                         </div>
                     </div>

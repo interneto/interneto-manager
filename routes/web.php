@@ -38,9 +38,7 @@ Route::get('/about', function() {
 
 
 // Routes of the interneto manager app
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/front-page', function () {
     if (!auth()->user()) {
@@ -51,6 +49,14 @@ Route::get('/front-page', function () {
         ]);
     }
 })->name('front-page');
+
+// Log out
+Route::post('/front-page', function () {
+    return view('preview.home', [
+        'directories' => auth()->user()->directories,
+    ]);
+})->name('front-page');
+
 
 // Route of forms
 

@@ -22,11 +22,12 @@ class LinkFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->text(random_int(10, 255)),
-            'url' => $beginHttp . $middleHttp . $endHttp,
+            'uri' => $beginHttp . $middleHttp . $endHttp,
+            'type' => fake()->text('audio', 'document', 'image', 'video'),
             'thumbnail' => fake()->imageUrl(),
             'icon' => fake()->image(),
-            'rating' => fake()->numberBetween(1, 5),
-            'date_modified' => fake()->date(),
+            //'rating' => fake()->numberBetween(1, 5),
+            //'date_modified' => fake()->date(),
         ];
     }
 }

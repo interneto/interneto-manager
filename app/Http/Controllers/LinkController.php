@@ -19,12 +19,13 @@ class LinkController extends Controller
     public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
-            "name" => "required|max:255|unique:links,name",
-            "description" => "",
-            "link" => "required|max:255",
+            "name" => "required|max:255",
+            "description" => "max:1000",
+            "uri" => "required|max:255|unique:links,uri",
             "directory_id" => "max:255",
             "tag" => "max:255",
-            "type" => "string|max:255"
+            "type" => "string|max:255",
+            //"rating" => "int",
         ]);
 
         $tagName = $validated['tag'];
@@ -33,13 +34,13 @@ class LinkController extends Controller
         if ($tag == null) {
             $tag = Tag::create(['name'=>$tagName]);
         }
-        $validated['id_tag'] = $tag->id;
+        $validated['tag_id'] = $tag->id;
 
         Link::create([
             "name" => $validated['name'],
-            "link" => $validated['link'],
+            "uri" => $validated['uri'],
             "directory_id" => $validated['directory_id'],
-            "id_tag" => $validated['id_tag'],
+            "tag_id" => $validated['tag_id'],
             "type" => $validated['type'],
         ]);
 

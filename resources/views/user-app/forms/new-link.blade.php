@@ -7,7 +7,7 @@
             <input type="text" class="form-control h-100" name="name" id="name" placeholder="Interneto.dev" value="{{ old('name') }}">
         </div>
         <div class="form-floating mb-3 h-100">
-            <input type="text" class="form-control h-100" name="link" id="link" placeholder="https://interneto.dev/" value="{{ old('link') }}">
+            <input type="text" class="form-control h-100" name="uri" id="uri" placeholder="https://interneto.dev/" value="{{ old('link') }}">
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Directory</span>

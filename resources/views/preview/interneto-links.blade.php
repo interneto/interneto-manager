@@ -1,5 +1,6 @@
 <x-layout-home>
 
+    <main class="mx-5 my-2">
     <h1 id="interneto-links">Interneto links</h1>
     <p>Interneto links is a free collection / directory / OSINT (open source intelligence) of categorized webs (around 33k webs).
         The directory is structured in !Interneto (info folder) + 13 main categories with subcategories inside where are accordingly stored the links. These links are homepage sites like <a href="https://subdomain.domain.tld/">https://subdomain.domain.tld/</a>. Also there are two specific categories: one for content of websites (audios, books, news) saved in the &quot;Content&quot; and public users of platforms (content creators) in &quot;Channels &amp; Profiles&quot;. Besides there are hashtags to facilitate the search.</p>
@@ -93,10 +94,18 @@
             </ul>
         </li>
     </ul>
+
+    <h4>The way to classify can vary</h4>
+    <ul>
+        <li>the most common is to classify from general to the concrete, from the most abstract to the most concise.</li>
+        <li>since the internet contains everything imaginable and more, it becomes a dictionary classification.</li>
+        <li>within the classification there are many methods to organize the content and therefore labeling is necessary in addition to a hierarchical tree.</li>
+    <ul>
+
     <h2 id="target">Target</h2>
     <p>With a big list of categorized selected links, you can create a web directory very useful to understand better the digital world and also you can investigate and extract better information using this system.</p>
     <p>The main problem is that the classification system and the knowledge is a personal thing. For that reason it would be great to create a bookmark manager based on your thoughts to satisfy them.</p>
-    <h2 id="next-step-bookmark-manager-app-">Next step: [[bookmark-manager-app]]</h2>
-
+    <h2 id="next-step-bookmark-manager-app-">Next step: <a href="{{route('interneto-app')}}">Interneto manager app</a></h2>
+</main>
 
 </x-layout-layout>
