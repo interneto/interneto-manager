@@ -17,16 +17,16 @@
 
     <header class="px-4 d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="{{route('home')}}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img src="/interneto-logo/interneto-logo.svg" alt="interneto logo" height="40px" width="40px" />
+            <img src="/assets/interneto-logo.svg" alt="interneto logo" height="40px" width="40px" />
             <span class="fs-4">Interneto</span>
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{{route('home')}}" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="{{route('interneto-app')}}" class="nav-link px-2 link-dark">App</a></li>
-            <li><a href="{{route('interneto-links')}}" class="nav-link px-2 link-dark">Links</a></li>
-            <li><a href="{{route('blog')}}" class="nav-link px-2 link-dark">Blog</a></li>
-            <li><a href="{{route('about')}}" class="nav-link px-2 link-dark">About</a></li>
+            <li><a href="{{route('interneto-app')}}" class="nav-link px-2">App</a></li>
+            <li><a href="{{route('interneto-links')}}" class="nav-link px-2">Links</a></li>
+            <li><a href="{{route('blog')}}" class="nav-link px-2">Blog</a></li>
+            <li><a href="{{route('about')}}" class="nav-link px-2">About</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
@@ -43,11 +43,11 @@
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="{{route('home')}}" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">App</a></li>
-            <li><a href="{{route('interneto-links')}}" class="nav-link px-2 link-dark">Links</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Blog</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            <li><a href="{{route('home')}}" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="{{route('interneto-app')}}" class="nav-link px-2">App</a></li>
+            <li><a href="{{route('interneto-links')}}" class="nav-link px-2">Links</a></li>
+            <li><a href="{{route('blog')}}" class="nav-link px-2">Blog</a></li>
+            <li><a href="{{route('about')}}" class="nav-link px-2">About</a></li>
         </ul>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between mx-5">

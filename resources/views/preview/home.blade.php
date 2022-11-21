@@ -6,8 +6,8 @@
         <p>
             Interneto is a project to classify and categorize the internet, it has two main categories:
                 <ul>
-                    <li>Interneto links: one create a directory with related links to explore the interent in a better way.</li>
-                    <li>Interneto manager: tool to create your own net, you can classiffy internet links but also local links.</li>
+                    <li><a href="{{route('interneto-links')}}">Interneto links</a>: a directory with related links to explore the interent in a better way.</li>
+                    <li><a href="{{route('interneto-app')}}">Interneto manager</a>: app to classify internet links but also local links.</li>
                 </ul>    
         </p>
 
@@ -20,6 +20,8 @@
             The classification system is mainly defined by language if the word does not exist, there is no way to
             express that thought in that classification.
         </p>
+
+        <p>After using <a href="https://raindrop.io/interneto">raindrop.io</a> for more than two years and have been classifed over 34,000 websites. I proposed to myself to create my own system manager.</p>
 
     </main>
 
