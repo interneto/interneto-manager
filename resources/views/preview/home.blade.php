@@ -1,4 +1,4 @@
-<x-home-layout>
+<x-layout-home>
 
     <div class="container ms-3 me-3">
 
@@ -29,4 +29,4 @@
         <ul>
     </div>
 
-</x-home-layout>
+</x-layout-home>

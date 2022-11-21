@@ -1,6 +1,5 @@
-<x-manager-layout>
-    <x-layout-admin.header.header />
-    <x-layout-admin.menu.menu />
+<x-layout-manager>
+    <x-layout-user.header />
 
     <form action="{{ route('new-link-form') }}" method="post">
         @csrf
@@ -39,4 +38,4 @@
         <button type="submit" class="btn btn-primary">Create link</button>
     </form>
 
-</x-manager-layout>
+</x-layout-manager>

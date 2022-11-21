@@ -15,54 +15,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routes of preview webpage
 Route::get('/', function() {
-    return view('home');
+    return view('preview.home');
 })->name('home');
 
 Route::get('/app', function() {
-    return view('interneto-app');
+    return view('preview.interneto-app');
 })->name('interneto-app');
 
 Route::get('/links', function() {
-    return view('interneto-links');
+    return view('preview.interneto-links');
 })->name('interneto-links');
 
 Route::get('/blog', function() {
-    return view('blog');
+    return view('preview.blog');
 })->name('blog');
 
 Route::get('/about', function() {
-    return view('about');
+    return view('preview.about');
 })->name('about');
 
+
+// Routes of the interneto manager app
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::get('/front-page', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
     } else {
-        return view('front-page', [
+        return view('user-app.front-page', [
             'directories' => auth()->user()->directories,
         ]);
     }
 })->name('front-page');
 
+// Route of forms
 
+// Create link
 Route::get('/new-link', function () {
-    return view('new-link', [
+    return view('user-app.forms.new-link', [
         "directories" => auth()->user()->directories,
     ]);
 })->name('new-link');
 
 Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form');
 
-Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory-form');
+// Create directory
+Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory');
 
-Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory');
-
-
+Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory-form');
 
 require __DIR__ . '/auth.php';

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Tag;
+use App\Http\Controllers\Str;
 use Illuminate\Http\Request;
+
 
 class TagController extends Controller
 {
     public function new_form(Request $request) {
-        return view('admin.new-tag-form');
+        return view('user-app.new-tag-form');
     }
 
     public function create(Request $request) {
@@ -19,6 +22,6 @@ class TagController extends Controller
 
         Tag::create($validated);
 
-        return redirect(route('admin-page'));
+        return redirect(route('user-app.front-page'));
     }
 }

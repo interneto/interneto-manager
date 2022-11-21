@@ -1,6 +1,5 @@
-<x-manager-layout>
-    <x-layout-admin.header.header />
-    <x-layout-admin.menu.menu />
+<x-layout-manager>
+    <x-layout-user.header />
 
     <div>
         <ul>
@@ -30,4 +29,4 @@
 
     <br>
 
-</x-manager-layout>
+</x-layout-manager>

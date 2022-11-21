@@ -1,4 +1,4 @@
-<x-home-layout>
+<x-layout-home>
 
     <h1 id="interneto-links">Interneto links</h1>
     <p>Interneto links is a free collection / directory / OSINT (open source intelligence) of categorized webs (around 33k webs).
@@ -99,4 +99,4 @@
     <h2 id="next-step-bookmark-manager-app-">Next step: [[bookmark-manager-app]]</h2>
 
 
-</x-home-layout>
+</x-layout-layout>

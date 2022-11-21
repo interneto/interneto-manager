@@ -28,7 +28,7 @@ class DirectoryController extends Controller
         return redirect(route('front-page'));
     }
 
-    public function create(Request $request) {
-        return view('new-directory', ['directories'=>auth()->user()->directories]);
+    public function create() {
+        return view('user-app.forms.new-directory', ['directories'=>auth()->user()->directories]);
     }
 }

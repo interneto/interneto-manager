@@ -4,8 +4,6 @@
             <i class="bi bi-app select-all"></i>
         </div>
 
-        <div class="icon col mx-2" style="height: 20px; width: 20px; background-color: black; border-radius: 50%;">
-        </div>
         <div class="name col mx-2">
             Directory
         </div>
