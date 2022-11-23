@@ -15,10 +15,6 @@ class Link extends Model
         return $this->belongsTo(Directory::class);
     }
 
-    public function type() {
-        return $this->belongsTo(Type::class);
-    }
-
     public function tags() {
         return $this->belongsToMany(Tag::class);
     }

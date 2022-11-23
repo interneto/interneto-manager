@@ -6,9 +6,6 @@
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                 </form>
             </div>
-            <div class="col-3 align-items-end">
-                <i class="bi bi-star-fill"></i>
-            </div>
         </div>
     </div>
 </div>
