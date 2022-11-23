@@ -40,22 +40,22 @@ Route::get('/about', function() {
 // Routes of the interneto manager app
 Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/front-page', function () {
+Route::get('/all-bookmarks', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
     } else {
-        return view('user-app.front-page', [
+        return view('user-app.all-bookmarks', [
             'directories' => auth()->user()->directories,
         ]);
     }
-})->name('front-page');
+})->name('all-bookmarks');
 
 // Log out
-Route::post('/front-page', function () {
+Route::post('/all-bookmarks', function () {
     return view('preview.home', [
         'directories' => auth()->user()->directories,
     ]);
-})->name('front-page');
+})->name('all-bookmarks');
 
 
 // Route of forms

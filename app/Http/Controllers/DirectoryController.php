@@ -25,7 +25,7 @@ class DirectoryController extends Controller
 
         Directory::create($validated);
 
-        return redirect(route('front-page'));
+        return redirect(route('all-bookmarks'));
     }
 
     public function create() {

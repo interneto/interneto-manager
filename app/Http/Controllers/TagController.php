@@ -22,6 +22,6 @@ class TagController extends Controller
 
         Tag::create($validated);
 
-        return redirect(route('user-app.front-page'));
+        return redirect(route('user-app.all-bookmarks'));
     }
 }
