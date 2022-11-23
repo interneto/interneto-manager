@@ -24,7 +24,7 @@ class LinkController extends Controller
             "uri" => "required|max:255|unique:links,uri",
             "directory_id" => "max:255",
             "tag" => "max:255",
-            "type" => "string|max:255",
+            //"type" => "string|max:255",
             //"rating" => "int",
         ]);
 
@@ -41,7 +41,7 @@ class LinkController extends Controller
             "uri" => $validated['uri'],
             "directory_id" => $validated['directory_id'],
             "tag_id" => $validated['tag_id'],
-            "type" => $validated['type'],
+            //"type" => $validated['type'],
         ]);
 
         return redirect(route('new-link'));

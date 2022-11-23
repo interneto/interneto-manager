@@ -13,7 +13,7 @@
         @csrf
 
         <select name="directory_id" id="directory_id" class="form-select">
-            <option value="">-- Selecciona una categoría --</option>
+            <option value="">-- Select a directory --</option>
             @foreach ($directories as $directory)
             <option value="{{ $directory->id }}" {{ $directory->id == old('directory_id') ? 'selected' : '' }}>
                 {{ $directory->name }}

@@ -17,16 +17,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('directory_id')->nullable();
             $table->foreignId('tag_id');
-
             $table->string('name');    // name of links
             $table->text('description')->nullable(); // description of link
             $table->string('uri');  // uri (uniform resource identifier)
-            $table->string('type'); // types of links
             $table->string('thumbnail')->nullable(); // screenshot of the link
             $table->string('icon')->nullable(); // icon of the link
+            $table->timestamps(); // created_at
+            //$table->string('type'); // types of links
             //$table->integer('rating')->nullable(); // 1 to 5 stars
             //$table->timestamps()->date_modify('date_modified'); // date modified
-            $table->timestamps(); // created_at
         });
     }
 

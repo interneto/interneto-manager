@@ -23,9 +23,9 @@ class LinkFactory extends Factory
             'name' => fake()->name(),
             'description' => fake()->text(random_int(10, 255)),
             'uri' => $beginHttp . $middleHttp . $endHttp,
-            'type' => fake()->text('audio', 'document', 'image', 'video'),
             'thumbnail' => fake()->imageUrl(),
             'icon' => fake()->image(),
+            //'type' => fake()->text('audio', 'document', 'image', 'video'),
             //'rating' => fake()->numberBetween(1, 5),
             //'date_modified' => fake()->date(),
         ];
