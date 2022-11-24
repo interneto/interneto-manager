@@ -14,12 +14,10 @@
         </a>
     </div>
 
-    <x-layout-user.menu-links />
-
     <div>
         @foreach ($directories as $directory)
         <div>
-            <h2>{{$directory->name}}</h2>
+            
             @foreach ($directory->links as $link)
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
@@ -32,9 +30,8 @@
                             <p class="card-text">{{$link->name}}</p>
                             <p class="card-text">{{$link->description}}</p>
                             <p class="card-text">{{$link->uri}}</p>
-                            <p class="card-text">Tag</p>
-                            <p class="card-text">{{$link->type}}</p>
-                            <p class="card-text"></p>
+                            <p class="card-text">{{$link->tag}}</p>
+                            <p class="card-text">{{$directory->name}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>

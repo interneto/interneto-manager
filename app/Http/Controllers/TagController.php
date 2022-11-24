@@ -18,9 +18,9 @@ class TagController extends Controller
             "name" => "required|max::255|unique:tags,name",
         ]);
 
-        $validated["slug"] = Str::slug($validated["name"]);
+        //$validated["slug"] = Str::slug($validated["name"]);
 
-        Tag::create($validated);
+        //Tag::create($validated);
 
         return redirect(route('user-app.all-bookmarks'));
     }
