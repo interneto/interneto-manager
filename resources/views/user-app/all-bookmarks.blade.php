@@ -1,4 +1,4 @@
-<x-layout-manager>
+<x-layout-manager :directories="$directories">
     <x-layout-user.header />
 
     <div class="mx-2 my-4">
@@ -17,7 +17,7 @@
     <div>
         @foreach ($directories as $directory)
         <div>
-            
+
             @foreach ($directory->links as $link)
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
@@ -35,7 +35,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{route('edit-link-form', ['id'=>$link->id])}}">Edit</a></button>
                                 </div>
                                 <small class="text-muted">{{$link->created_at}}</small>
                             </div>

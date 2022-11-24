@@ -1,3 +1,5 @@
+@props(["directories"])
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +17,9 @@
 <body>
     <div class="row mx-2 my-2 ">
         <div class="col-sm-2">
-            <x-layout-user.sidebar />
+            <x-layout-user.sidebar :directories="$directories" />
         </div>
+
         <div class="col-sm-10">
             {{ $slot }}
         </div>

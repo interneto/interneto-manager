@@ -1,3 +1,5 @@
+@props(["directories"])
+
 <div class="mx-2 my-2">
 
     <!-- User info -->
@@ -32,35 +34,17 @@
                 All bookmarks
             </a>
         </li>
-        <li>
-            <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                Unsorted
+        @foreach ($directories as $directory)
+        <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">
+                {{$directory->name }}
             </a>
         </li>
-        <li>
-            <a class="nav-link" href="#">
-                Trash
-            </a>
-        </li>
+        @endforeach
         <li>
             <a class="nav-link" href="#">
                 Graph view
             </a>
-        </li>
-    </ul>
-
-    <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                Home
-            </button>
-            <div class="collapse" id="home-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark rounded">Overview</a></li>
-                    <li><a href="#" class="link-dark rounded">Updates</a></li>
-                    <li><a href="#" class="link-dark rounded">Reports</a></li>
-                </ul>
-            </div>
         </li>
     </ul>
 

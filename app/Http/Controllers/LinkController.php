@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use App\Models\Tag;
+use App\Models\Directory;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller

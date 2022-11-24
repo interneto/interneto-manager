@@ -1,16 +1,9 @@
 <x-layout-manager :directories="$directories">
     <x-layout-user.header />
 
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-
-    <form action="{{ route('new-directory') }}" method="post">
+    <form action="{{ route('edit-link-form', $directory->id) }}" method="post">
         @csrf
+        @method('patch')
 
         <select name="directory_id" id="directory_id" class="form-select">
             <option value="">-- Select a directory --</option>
@@ -26,7 +19,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Create directory</button>
     </form>
-
-    <br>
 
 </x-layout-manager>

@@ -51,5 +51,12 @@ Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form
 Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory');
 Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory-form');
 
+// Edit link
+//Route::get('/link/{id}/edit', [LinkController::class, 'edit'])->name('edit-link-form');
+
+
+Route::get('/link/{id}/edit', [DirectoryController::class, 'edit'])->name('edit-link-form');
+
+
 
 require __DIR__ . '/auth.php';
