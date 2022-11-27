@@ -23,9 +23,7 @@ class DirectoryController extends Controller
 
         $validated['user_id'] = auth()->user()->id;
 
-        Directory::create(
-            $validated
-        );
+        Directory::create($validated);
 
         return redirect(route('all-bookmarks'));
     }

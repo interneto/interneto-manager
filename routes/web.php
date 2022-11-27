@@ -54,34 +54,45 @@ Route::get('/all-bookmarks', function () {
 Route::get('/sidebar', function () { return redirect(route('logout')); })->name('sidebar');
 
 // Create link
-// Route::get('/new-link', [LinkController::class, 'new_form'])->name('new-link');
+/*
 Route::get('/new-link', function () { return view('user-app.forms.new-link', [
         "directories" => auth()->user()->directories,
     ]);
 })->name('new-link');
-
+*/
+Route::get('/new-link', [LinkController::class, 'new_form'])->name('new-link');
 Route::post('/new-link', [LinkController::class, 'create'])->name('create-link');
-
-// Edit link
-// Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
-// Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
 
 // Create directory
 Route::get('/new-directory', [DirectoryController::class, 'new_form'])->name('new-directory');
 Route::post('/new-directory', [DirectoryController::class, 'create'])->name('create-directory');
 
-/*
-// Edit directory
-Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
-Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
-
 // Create tag
 Route::get('/new-tag', [TagController::class, 'new_form'])->name('new-tag');
 Route::post('/new-tag', [TagController::class, 'create'])->name('create-tag');
 
+
+// Edit link
+// Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
+// Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
+
+// Edit directory
+// Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
+// Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
+
 // Edit tag
-Route::get('/tag/{id}', [DirectoryController::class, 'edit'])->name('tag-directory');
-Route::post('/tag/{id}', [DirectoryController::class, 'update'])->name('update-tag');
-*/
+// Route::get('/tag/{id}', [TagController::class, 'edit'])->name('tag-directory');
+// Route::post('/tag/{id}', [TagController::class, 'update'])->name('update-tag');
+
+
+// Remove link
+Route::get('/link/{id}', [LinkController::class, 'delete'])->name('delete-link');
+
+// Remove directory
+Route::get('/directory/{id}', [DirectoryController::class, 'delete'])->name('delete-directory');
+
+// Remove tag
+Route::get('/tag/{id}', [TagController::class, 'delete'])->name('delete-tag');
+
 
 require __DIR__ . '/auth.php';

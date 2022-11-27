@@ -21,22 +21,8 @@
                 </select>
             </div>
             <div>
-                <!--<label for="tag">Tag</label>-->
                 <input class="form-control" type="text" name="tag" id="tag" placeholder="#tag" value="{{ old('tag') }}">
             </div>
-            <br>
-            <div>
-            <!-- 
-            <label for="type">Type</label> 
-            <select name="type" id="type">
-                <option value="audio">Audio</option>
-                <option value="document">Document</option>
-                <option value="image">Image</option>
-                <option value="video">Video</option>
-            </select>
-            -->
-            </div>
-            <br>
             <button type="submit" class="btn btn-primary">Create link</button>
         </form>
     </div>

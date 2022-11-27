@@ -11,6 +11,7 @@ class LinkController extends Controller
     public function new_form(Request $request)
     {
         return view('user-app.forms.new-link', [
+            "directories" => auth()->user()->directories,
         ]);
     }
 
@@ -22,8 +23,6 @@ class LinkController extends Controller
             "uri" => "required|max:255|unique:links,uri",
             "directory_id" => "max:255",
             "tag" => "max:255",
-            //"type" => "string|max:255",
-            //"rating" => "int",
         ]);
 
         $tagName = $validated['tag'];
@@ -39,9 +38,37 @@ class LinkController extends Controller
             "uri" => $validated['uri'],
             "directory_id" => $validated['directory_id'],
             "tag_id" => $validated['tag_id'],
-            //"type" => $validated['type'],
         ]);
 
         return redirect(route('new-link'));
+    }
+
+    public function edit(Link $link) {
+
+        $link = Link::findOrFail($link->id);
+
+        return view(
+            'user-app.forms.edit-link',
+            [
+                'link' => $link,
+            ]
+        );
+    }
+
+    public function update(Request $request, Link $link) {
+        $validated = $request->validate([
+            "name" => "required|max:255|unique:directories,name",
+            "link_id" => "max:255",
+        ]);
+
+        $link->update($validated);
+
+        return view('user-app.all-bookmarks');
+    }
+
+    public function delete(Link $link) {
+        $link->delete();
+
+        return view('user-app.all-bookmarks');
     }
 }
