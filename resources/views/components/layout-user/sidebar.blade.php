@@ -9,13 +9,14 @@
             <span>{{ auth()->user()->name }}</span>
         </a>
         <ul class="dropdown-menu text-small shadow">
-            <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
-            <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
             <li>
                 <hr class="dropdown-divider">
             </li>
             <li>
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                   document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -35,12 +36,13 @@
             </a>
         </li>
         @foreach ($directories as $directory)
-        <li class="nav-item">
-            <a href="#" class="nav-link" aria-current="page">
+        <li class="nav-item  {{ Request::is('/directories/'.$directory->id) ? 'active' : null }}">
+            <a href="{{url('/directories/'.$directory->id)}}" class="nav-link" aria-current="page">
                 {{$directory->name }}
             </a>
         </li>
         @endforeach
+
         <li>
             <a class="nav-link" href="#">
                 Graph view

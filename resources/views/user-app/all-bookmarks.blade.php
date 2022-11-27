@@ -1,24 +1,6 @@
 <x-layout-manager :directories="$directories">
     <x-layout-user.header />
 
-    <div class="mx-2 my-4">
-        <a href="{{route('create-link')}}">
-            <button type="button" class="btn btn-outline-primary float-right">
-                Create link
-            </button>
-        </a>
-        <a href="{{route('create-directory')}}">
-            <button type="button" class="btn btn-outline-primary float-right">
-                Create directory
-            </button>
-        </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary float-right">
-                Create tag
-            </button>
-        </a>
-    </div>
-
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach ($directories as $directory)
             @foreach ($directory->links as $link)
@@ -31,15 +13,24 @@
                     </svg>
                     -->
                     <div class="card-body">
-                        <p class="card-text">{{$link->name}}</p>
-                        <p class="card-text">{{$link->description}}</p>
-                        <a href="{{$link->uri}}">{{$link->uri}}</a>
-                        <p class="card-text">{{$link->tag}}</p>
-                        <p class="card-text">{{$directory->name}}</p>
+                        <p class="card-text">
+                            {{$link->name}}
+                        </p>
+                        <p class="card-text">
+                            {{$link->description}}
+                        </p>
+                        <a href="{{$link->uri}}">
+                            {{$link->uri}}</a>
+                        <p class="card-text">
+                            {{$link->tag}}
+                        </p>
+                        <p href="{{url('/directories/'.$directory->id)}}" class="card-text">
+                            {{$directory->name}}
+                        </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button> 
-                                <a class="btn btn-outline-secondary" href="{{route('create-link', ['id'=>$link->id])}}" role="button"></a>
+                                <a class="btn btn-outline-secondary" href="{{$link->uri}}" role="button">View</button>
+                                <a class="btn btn-outline-secondary" href="{{route('create-link', ['id'=>$link->id])}}" role="button">Edit</a>
                                 <button type="button" class="btn btn-sm btn-outline-secondary" alt="trash"><i class="bi bi-trash"></i></button>
                             </div>
                             <small class="text-muted">{{$link->created_at}}</small>
