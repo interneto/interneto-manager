@@ -23,17 +23,18 @@ Route::get('/blog', function() { return view('preview.blog'); })->name('blog');
 Route::get('/about', function() { return view('preview.about'); })->name('about');
 
 // Views blog articles
+Route::get('/blog/articles/categorize-links', function() { 
+    return view('preview.articles.categorize-links'); 
+})->name('cat-links');
+
 Route::get('/blog/articles/information-to-knwoledge', function() { 
     return view('preview.articles.information-to-knwoledge'); 
 })->name('info-to-know');
 
-Route::get('/blog/articles/categorize-information', function() { 
-    return view('preview.articles.categorize-information'); 
-})->name('cat-info');
+Route::get('/blog/articles/comparing-bookmark-maangers', function() { 
+    return view('preview.articles.comparing-bookmark-managers'); 
+})->name('comparing-bookmark-managers');
 
-Route::get('/blog/articles/organize-links', function() { 
-    return view('preview.articles.organize-links'); 
-})->name('organize-links');
 
 // Authenticate to interneto manager app
 Route::get('/dashboard', function () { return redirect(route('all-bookmarks')); })->middleware(['auth', 'verified'])->name('dashboard');

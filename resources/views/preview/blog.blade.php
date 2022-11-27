@@ -11,7 +11,7 @@
 
     <article class="my-5">
         <h2>
-            <a href="{{route('cat-info')}}">How to categorize information</a>
+            <a href="{{route('cat-links')}}">How to categorize links</a>
         </h2>
         <p>
 
@@ -20,7 +20,7 @@
 
     <article>
         <h2>
-            <a href="{{route('organize-links')}}">How to organize links?</a>
+            <a href="{{route('comparing-bookmark-managers')}}">Comparing bookmark managers</a>
         </h2>
         <p>
 
