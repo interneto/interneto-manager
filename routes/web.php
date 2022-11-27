@@ -22,6 +22,19 @@ Route::get('/links', function() { return view('preview.interneto-links'); })->na
 Route::get('/blog', function() { return view('preview.blog'); })->name('blog');
 Route::get('/about', function() { return view('preview.about'); })->name('about');
 
+// Views blog articles
+Route::get('/blog/articles/information-to-knwoledge', function() { 
+    return view('preview.articles.information-to-knwoledge'); 
+})->name('info-to-know');
+
+Route::get('/blog/articles/categorize-information', function() { 
+    return view('preview.articles.categorize-information'); 
+})->name('cat-info');
+
+Route::get('/blog/articles/organize-links', function() { 
+    return view('preview.articles.organize-links'); 
+})->name('organize-links');
+
 // Authenticate to interneto manager app
 Route::get('/dashboard', function () { return redirect(route('all-bookmarks')); })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -50,13 +63,6 @@ Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form
 // Create directory
 Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory');
 Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory-form');
-
-// Edit link
-//Route::get('/link/{id}/edit', [LinkController::class, 'edit'])->name('edit-link-form');
-
-
-Route::get('/link/{id}/edit', [DirectoryController::class, 'edit'])->name('edit-link-form');
-
 
 
 require __DIR__ . '/auth.php';
