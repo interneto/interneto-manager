@@ -54,16 +54,34 @@ Route::get('/all-bookmarks', function () {
 Route::get('/sidebar', function () { return redirect(route('logout')); })->name('sidebar');
 
 // Create link
-Route::get('/new-link', function () {
-    return view('user-app.forms.new-link', [
+// Route::get('/new-link', [LinkController::class, 'new_form'])->name('new-link');
+Route::get('/new-link', function () { return view('user-app.forms.new-link', [
         "directories" => auth()->user()->directories,
     ]);
 })->name('new-link');
-Route::post('/new-link', [LinkController::class, 'create'])->name('new-link-form');
+
+Route::post('/new-link', [LinkController::class, 'create'])->name('create-link');
+
+// Edit link
+// Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
+// Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
 
 // Create directory
-Route::get('/new-directory', [DirectoryController::class, 'create'])->name('new-directory');
-Route::post('/new-directory', [DirectoryController::class, 'store'])->name('new-directory-form');
+Route::get('/new-directory', [DirectoryController::class, 'new_form'])->name('new-directory');
+Route::post('/new-directory', [DirectoryController::class, 'create'])->name('create-directory');
 
+/*
+// Edit directory
+Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
+Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
+
+// Create tag
+Route::get('/new-tag', [TagController::class, 'new_form'])->name('new-tag');
+Route::post('/new-tag', [TagController::class, 'create'])->name('create-tag');
+
+// Edit tag
+Route::get('/tag/{id}', [DirectoryController::class, 'edit'])->name('tag-directory');
+Route::post('/tag/{id}', [DirectoryController::class, 'update'])->name('update-tag');
+*/
 
 require __DIR__ . '/auth.php';

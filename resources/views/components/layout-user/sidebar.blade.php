@@ -30,7 +30,7 @@
     <!-- Collections -->
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="{{route('all-bookmarks')}}" class="nav-link active" aria-current="page">
                 All bookmarks
             </a>
         </li>
@@ -46,12 +46,13 @@
                 Graph view
             </a>
         </li>
-    </ul>
 
-    <!-- Tags -->
-    <div class="tags">
-        Tags
-    </div>
+        <li>
+            <a class="nav-link" href="#">
+                Tags
+            </a>
+        </li>
+    </ul>
 
     <!-- Types -->
     <!--
@@ -70,6 +71,5 @@
             </div>
         </div>
     -->
-
 
 </div>

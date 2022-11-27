@@ -2,13 +2,13 @@
     <x-layout-user.header />
 
     <div class="mt-5">
-        <form action="{{ route('new-link-form') }}" method="post">
+        <form action="{{ route('create-link') }}" method="post">
             @csrf
             <div class="mb-3">
                 <input class="form-control" type="text" name="name" id="name" placeholder="link name" value="{{ old('name') }}">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="uri" id="uri" placeholder="https://sub.domain.com or file:///home/user" value="{{ old('link') }}">
+                <input type="text" class="form-control" name="uri" id="uri" placeholder="https://sub.domain.tld" value="{{ old('link') }}">
             </div>
             <div class="input-group mb-3">
                 <select name="directory_id" id="directory_id" class="form-select">
@@ -26,8 +26,8 @@
             </div>
             <br>
             <div>
-                <!-- <label for="type">Type</label> -->
-                <!--
+            <!-- 
+            <label for="type">Type</label> 
             <select name="type" id="type">
                 <option value="audio">Audio</option>
                 <option value="document">Document</option>

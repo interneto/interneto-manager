@@ -9,7 +9,7 @@
         </ul>
     </div>
 
-    <form action="{{ route('new-directory') }}" method="post">
+    <form action="{{ route('create-directory') }}" method="post">
         @csrf
 
         <select name="directory_id" id="directory_id" class="form-select">

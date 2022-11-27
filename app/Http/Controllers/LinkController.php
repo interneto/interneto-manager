@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use App\Models\Tag;
-use App\Models\Directory;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
 {
-    /*
     public function new_form(Request $request)
     {
-        return view('admin.new-link-form', [
+        return view('user-app.forms.new-link', [
         ]);
     }
-    */
 
     public function create(Request $request) {
         //dd($request);

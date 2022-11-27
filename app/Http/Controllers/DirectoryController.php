@@ -7,30 +7,27 @@ use Illuminate\Http\Request;
 
 class DirectoryController extends Controller
 {
-    /*
-    public function new_form(Request $request)
-    {
-        return view('admin.new-product-form', [
-        ]);
+    public function new_form() {
+        return view(
+            'user-app.forms.new-directory', 
+            ['directories'=>auth()->user()->directories]
+        );
     }
-    */
 
-    public function store(Request $request) {
+    public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
             "name" => "required|max:255|unique:directories,name",
             "directory_id" => "max:255",
         ]);
 
-        $validated['user_id']=auth()->user()->id;
+        $validated['user_id'] = auth()->user()->id;
 
-        Directory::create($validated);
+        Directory::create(
+            $validated
+        );
 
         return redirect(route('all-bookmarks'));
-    }
-
-    public function create(Request $request) {
-        return view('user-app.forms.new-directory', ['directories'=>auth()->user()->directories]);
     }
 
     public function edit(Directory $directory) {
