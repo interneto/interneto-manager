@@ -1,5 +1,4 @@
 <x-layout-manager :directories="$directories">
-    <x-layout-user.header />
 
     <div class="mt-5">
         <form action="{{ route('create-link') }}" method="post">

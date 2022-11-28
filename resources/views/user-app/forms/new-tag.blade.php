@@ -1,11 +1,10 @@
-<x-layout-manager :directories="$directories">
-    <x-layout-user.header />
+<x-layout-manager :tags="$tags">
 
     <form action="{{ route('create-tag') }}" method="post">
         @csrf
 
         <select name="tag_id" id="tag_id" class="form-select">
-            <option value="">-- Select a directory --</option>
+            <option value="">-- Select a tag --</option>
             @foreach ($tags as $tag)
             <option value="{{ $tag->id }}" {{ $tag->id == old('tag_id') ? 'selected' : '' }}>
                 {{ $tag->name }}

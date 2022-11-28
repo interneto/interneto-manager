@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        /*
         // Tags of audio
         $audio_tag = \App\Models\Tag::factory()->create([
             "name" => "Audio",
@@ -61,7 +62,13 @@ class DatabaseSeeder extends Seeder
         foreach ($video_links as $link) {
             $link->tags()->attach($video_tag);
         }
+        */
 
+       // Tags of audio
+        $audio_tag = \App\Models\Tag::factory()->create([
+            "name" => "Audio",
+        ]);
+        
         /*
         DB::table('types')->insert([
             'name' => Str::random(),    // audio, image, text, video

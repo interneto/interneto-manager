@@ -1,5 +1,4 @@
 <x-layout-manager :directories="$directories">
-    <x-layout-user.header />
 
     <div>
         <ul>

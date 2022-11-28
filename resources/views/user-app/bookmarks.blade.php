@@ -1,5 +1,4 @@
 <x-layout-manager :directories="$directories">
-    <x-layout-user.header />
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach ($directories as $directory)
@@ -32,7 +31,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a class="btn btn-outline-secondary" href="{{$link->uri}}" role="button">View</button>
-                                <a class="btn btn-outline-secondary" href="{{route('edit-link', ['id'=>$link->id])}}" role="button">Edit</a>
+                                <a class="btn btn-outline-secondary" href="{{route('show-link', ['id'=>$link->id])}}" role="button">Edit</a>
                                 <a class="btn btn-outline-secondary" href="{{route('delete-link', ['id'=>$link->id])}}" role="button"  onclick="confirm('Are you sure ,You want to delete this Category ?') || event.stopImmediatePropagation()">
                                     <i class="bi bi-trash  fa fa-times text-danger"></i>
                                 </a>

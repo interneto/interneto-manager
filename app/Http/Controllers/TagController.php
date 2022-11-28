@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Tag;
-use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 
 class TagController extends Controller
 {
-    public function new_form(Request $request) {
+    public function new_form() {
         return view(
             'user-app.forms.new-tag',
-            ['tags'=>auth()->user()->tags]
+            ['tags'=>Tag::all()]
         );
     }
 
     public function create(Request $request) {
         $validated = $request->validate([
+            "tag_id" => "max:255",
             "name" => "required|max::255|unique:tags,name",
         ]);
 
         //$validated['slug'] = Str::slug($validated["name"]);
-        //Tag::create($validated);
+        $validated['user_id'] = auth()->user()->id;
+        Tag::create($validated);
 
-        return redirect(route('user-app.bookmarks'));
+        return redirect(route('new-tag'));
     }
-    /*
+    
     public function edit(Tag $tag) {
 
         $tag = Tag::findOrFail($tag->id);
@@ -56,5 +57,4 @@ class TagController extends Controller
         session()->flash('message', 'Tag has been deleted successfully !');
         return view('user-app.bookmarks');
     }
-    */
 }

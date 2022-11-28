@@ -70,7 +70,44 @@ class LinkController extends Controller
     public function delete($id) {
         $link = Link::find($id);
         $link->delete();
-        session()->flash('message', 'Link has been deleted successfully !');
+        session()->flash('message', 'Link has been deleted successfully!');
         return view('user-app.bookmarks');
+        // return redirect()->back();
     }
+
+    /*
+    public function show($slug)
+    {
+        $product = Product::where('slug', $slug)->get()->firstOrFail();
+        $related_products = $product
+            ->category
+            ->products
+            ->where('id', '!=', $product->id)
+            ->shuffle()
+            ->take(3);
+        return view('public.single-product', [
+            "product" => $product,
+            "related_products" => $related_products,
+        ]);
+    }
+
+    public function list(Request $request)
+    {
+        return view('admin.product-list', [
+            "products" => Product::all(),
+        ]);
+    }
+
+    public function add_to_cart($id)
+    {
+        $cart = get_cart();
+
+        $cart->products()->attach($id, ["units" => 1]);
+
+        $cart->total_price += Product::find($id)->price;
+        $cart->save();
+
+        return redirect(route('store'));
+    }
+    */
 }

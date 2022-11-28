@@ -52,7 +52,7 @@
 
         <!-- Graph view -->
         <li>
-            <a class="nav-link" href="#">
+            <a href="{{route('graph-view')}}" class="nav-link active" aria-current="page">
                 Graph view
             </a>
         </li>

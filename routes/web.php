@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\DirectoryController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +42,7 @@ Route::get('/blog/articles/comparing-bookmark-maangers', function() {
 Route::get('/dashboard', function () { return redirect(route('bookmarks')); })
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-// Login (with register) or enter
+// If user is not logged redirect to login if not show all bookmarks 
 Route::get('/bookmarks', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
@@ -54,15 +56,18 @@ Route::get('/bookmarks', function () {
 // Log out
 Route::get('/sidebar', function () { return redirect(route('logout')); })->name('sidebar');
 
-// Views
-// Link views
-
 // Directories views
+Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
 
 // Tags views
 Route::get('/tags', function () { 
     return view( 'user-app.tags', ['tags' => auth()->user()->tags,] );
 })->name('tags');
+
+// Graph view
+Route::get('/graph-view', function () { return view('user-app.graph-view'); })->name('graph-view');
+
+// --- //
 
 // Create link
 Route::get('/new-link', [LinkController::class, 'new_form'])->name('new-link');
@@ -78,20 +83,20 @@ Route::post('/new-tag', [TagController::class, 'create'])->name('create-tag');
 
 
 // Edit link
-Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
+Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('show-link');
 Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
 
 // Edit directory
-Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
+// Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('show-directory');
 Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
 
 // Edit tag
-// Route::get('/tag/{id}', [TagController::class, 'edit'])->name('tag-directory');
+// Route::get('/tag/{id}', [TagController::class, 'edit'])->name('show-tag');
 // Route::post('/tag/{id}', [TagController::class, 'update'])->name('update-tag');
 
 
 // Delete link
-Route::get('/link/delete/{id}', [LinkController::class, 'delete'])->name('delete-link');
+Route::get('/bookmark/delete/{id}', [LinkController::class, 'delete'])->name('delete-link');
 
 // Delete directory
 Route::get('/directory/delete/{id}', [DirectoryController::class, 'delete'])->name('delete-directory');

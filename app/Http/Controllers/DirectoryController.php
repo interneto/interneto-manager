@@ -17,8 +17,8 @@ class DirectoryController extends Controller
     public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
-            "name" => "required|max:255|unique:directories,name",
             "directory_id" => "max:255",
+            "name" => "required|max:255|unique:directories,name",
         ]);
 
         $validated['user_id'] = auth()->user()->id;

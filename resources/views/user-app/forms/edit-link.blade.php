@@ -1,7 +1,7 @@
 <x-layout-manager :directories="$directories">
     <x-layout-user.header />
 
-    <form action="{{ route('edit-link)', $directory->id) }}" method="post">
+    <form action="{{ route('show-link)', $directory->id) }}" method="post">
         @csrf
         @method('patch')
 
