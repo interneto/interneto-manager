@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -21,12 +22,10 @@ class TagController extends Controller
         ]);
 
         //$validated['slug'] = Str::slug($validated["name"]);
-
         //Tag::create($validated);
 
         return redirect(route('user-app.bookmarks'));
     }
-
     /*
     public function edit(Tag $tag) {
 
@@ -39,7 +38,7 @@ class TagController extends Controller
             ]
         );
     }
-
+    
     public function update(Request $request, Tag $tag) {
         $validated = $request->validate([
             "name" => "required|max:255|unique:directories,name",
@@ -51,9 +50,10 @@ class TagController extends Controller
         return view('user-app.bookmarks');
     }
 
-    public function delete(Tag $tag) {
+    public function delete($id) {
+        $tag = Tag::find($id);
         $tag->delete();
-
+        session()->flash('message', 'Tag has been deleted successfully !');
         return view('user-app.bookmarks');
     }
     */

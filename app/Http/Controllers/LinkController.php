@@ -67,9 +67,10 @@ class LinkController extends Controller
         return view('user-app.bookmarks');
     }
 
-    public function delete(Link $link) {
+    public function delete($id) {
+        $link = Link::find($id);
         $link->delete();
-
+        session()->flash('message', 'Link has been deleted successfully !');
         return view('user-app.bookmarks');
     }
 }

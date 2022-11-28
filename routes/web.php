@@ -65,12 +65,6 @@ Route::get('/tags', function () {
 })->name('tags');
 
 // Create link
-/*
-Route::get('/new-link', function () { return view('user-app.forms.new-link', [
-        "directories" => auth()->user()->directories,
-    ]);
-})->name('new-link');
-*/
 Route::get('/new-link', [LinkController::class, 'new_form'])->name('new-link');
 Route::post('/new-link', [LinkController::class, 'create'])->name('create-link');
 
@@ -88,22 +82,22 @@ Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link')
 Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
 
 // Edit directory
-// Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
-// Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
+Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');
+Route::post('/directory/{id}', [DirectoryController::class, 'update'])->name('update-directory');
 
 // Edit tag
 // Route::get('/tag/{id}', [TagController::class, 'edit'])->name('tag-directory');
 // Route::post('/tag/{id}', [TagController::class, 'update'])->name('update-tag');
 
 
-// Remove link
-Route::get('/link/{id}', [LinkController::class, 'delete'])->name('delete-link');
+// Delete link
+Route::get('/link/delete/{id}', [LinkController::class, 'delete'])->name('delete-link');
 
-// Remove directory
-Route::get('/directory/{id}', [DirectoryController::class, 'delete'])->name('delete-directory');
+// Delete directory
+Route::get('/directory/delete/{id}', [DirectoryController::class, 'delete'])->name('delete-directory');
 
-// Remove tag
-Route::get('/tag/{id}', [TagController::class, 'delete'])->name('delete-tag');
+// Delete tag
+Route::get('/tag/delete/{id}', [TagController::class, 'delete'])->name('delete-tag');
 
 
 require __DIR__ . '/auth.php';

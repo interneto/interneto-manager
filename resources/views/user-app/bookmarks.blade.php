@@ -33,7 +33,9 @@
                             <div class="btn-group">
                                 <a class="btn btn-outline-secondary" href="{{$link->uri}}" role="button">View</button>
                                 <a class="btn btn-outline-secondary" href="{{route('edit-link', ['id'=>$link->id])}}" role="button">Edit</a>
-                                <a class="btn btn-outline-secondary" href="{{route('delete-link', ['id'=>$link->id])}}" role="button"><i class="bi bi-trash"></i></a>
+                                <a class="btn btn-outline-secondary" href="{{route('delete-link', ['id'=>$link->id])}}" role="button"  onclick="confirm('Are you sure ,You want to delete this Category ?') || event.stopImmediatePropagation()">
+                                    <i class="bi bi-trash  fa fa-times text-danger"></i>
+                                </a>
                             </div>
                             <small class="text-muted">{{$link->created_at}}</small>
                         </div>
