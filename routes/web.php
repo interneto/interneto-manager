@@ -61,7 +61,7 @@ Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-
 
 // Tags views
 Route::get('/tags', function () { 
-    return view( 'user-app.tags', ['tags' => auth()->user()->tags,] );
+    return view( 'user-app.tags', ['tags' => auth()->user()->tags] );
 })->name('tags');
 
 // Graph view

@@ -1,4 +1,4 @@
-<x-layout-manager :tags="$tags">
+<x-layout-manager :directories="$directories">
 
     <form action="{{ route('create-tag') }}" method="post">
         @csrf
