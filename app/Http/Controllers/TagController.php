@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Tag;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
@@ -10,7 +10,7 @@ class TagController extends Controller
 {
     public function new_form(Request $request) {
         return view(
-            'user-app.new-tag-form',
+            'user-app.forms.new-tag',
             ['tags'=>auth()->user()->tags]
         );
     }
@@ -24,7 +24,7 @@ class TagController extends Controller
 
         //Tag::create($validated);
 
-        return redirect(route('user-app.all-bookmarks'));
+        return redirect(route('user-app.bookmarks'));
     }
 
     /*
@@ -48,13 +48,13 @@ class TagController extends Controller
 
         $tag->update($validated);
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
 
     public function delete(Tag $tag) {
         $tag->delete();
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
     */
 }

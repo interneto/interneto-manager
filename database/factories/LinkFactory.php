@@ -16,7 +16,7 @@ class LinkFactory extends Factory
      */
     public function definition()
     {
-        $beginHttp = 'https//';
+        $beginHttp = 'https://';
         $middleHttp = fake()->word();
         $endHttp = '.com/';
         return [
@@ -25,9 +25,7 @@ class LinkFactory extends Factory
             'uri' => $beginHttp . $middleHttp . $endHttp,
             'thumbnail' => fake()->imageUrl(),
             'icon' => fake()->image(),
-            //'type' => fake()->text('audio', 'document', 'image', 'video'),
-            //'rating' => fake()->numberBetween(1, 5),
-            //'date_modified' => fake()->date(),
+            'created_at' => \Carbon\Carbon::now(),
         ];
     }
 }

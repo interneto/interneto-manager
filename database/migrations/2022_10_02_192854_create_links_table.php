@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('thumbnail')->nullable(); // screenshot of the link
             $table->string('icon')->nullable(); // icon of the link
             $table->timestamps(); // created_at
-            //$table->string('type'); // types of links
             //$table->integer('rating')->nullable(); // 1 to 5 stars
             //$table->timestamps()->date_modify('date_modified'); // date modified
         });

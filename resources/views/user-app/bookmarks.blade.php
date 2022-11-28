@@ -32,11 +32,8 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a class="btn btn-outline-secondary" href="{{$link->uri}}" role="button">View</button>
-                                <a class="btn btn-outline-secondary" href="{{route('create-link', ['id'=>$link->id])}}" role="button">Edit</a>
-                                <a class="btn btn-outline-secondary" href="{{route('create-link', ['id'=>$link->id])}}" role="button"><i class="bi bi-trash"></i></a>
-
-
-                                <button type="button" class="btn btn-sm btn-outline-secondary" alt="trash"></button>
+                                <a class="btn btn-outline-secondary" href="{{route('edit-link', ['id'=>$link->id])}}" role="button">Edit</a>
+                                <a class="btn btn-outline-secondary" href="{{route('delete-link', ['id'=>$link->id])}}" role="button"><i class="bi bi-trash"></i></a>
                             </div>
                             <small class="text-muted">{{$link->created_at}}</small>
                         </div>

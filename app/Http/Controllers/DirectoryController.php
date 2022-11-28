@@ -25,7 +25,7 @@ class DirectoryController extends Controller
 
         Directory::create($validated);
 
-        return redirect(route('all-bookmarks'));
+        return redirect(route('bookmarks'));
     }
 
     public function edit(Directory $directory) {
@@ -48,12 +48,12 @@ class DirectoryController extends Controller
 
         $directory->update($validated);
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
 
     public function delete(Directory $directory) {
         $directory->delete();
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
 }

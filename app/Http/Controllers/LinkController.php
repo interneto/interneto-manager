@@ -10,9 +10,10 @@ class LinkController extends Controller
 {
     public function new_form(Request $request)
     {
-        return view('user-app.forms.new-link', [
-            "directories" => auth()->user()->directories,
-        ]);
+        return view(
+            'user-app.forms.new-link', 
+            ["directories" => auth()->user()->directories,]
+        );
     }
 
     public function create(Request $request) {
@@ -63,12 +64,12 @@ class LinkController extends Controller
 
         $link->update($validated);
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
 
     public function delete(Link $link) {
         $link->delete();
 
-        return view('user-app.all-bookmarks');
+        return view('user-app.bookmarks');
     }
 }

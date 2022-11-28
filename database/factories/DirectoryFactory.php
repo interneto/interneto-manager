@@ -17,10 +17,8 @@ class DirectoryFactory extends Factory
     public function definition()
     {
         return [
-            //
             'name' => fake()->name(),
-            'icon' => fake()->
-            UploadedFile::fake()->image('photo2.jpg')
+            // UploadedFile::fake()->image('photo2.jpg')
         ];
     }
 }

@@ -37,21 +37,32 @@ Route::get('/blog/articles/comparing-bookmark-maangers', function() {
 
 
 // Authenticate to interneto manager app
-Route::get('/dashboard', function () { return redirect(route('all-bookmarks')); })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () { return redirect(route('bookmarks')); })
+    ->middleware(['auth', 'verified'])->name('dashboard');
 
 // Login (with register) or enter
-Route::get('/all-bookmarks', function () {
+Route::get('/bookmarks', function () {
     if (!auth()->user()) {
         return redirect(route('login'));
     } else {
-        return view('user-app.all-bookmarks', [
+        return view('user-app.bookmarks', [
             'directories' => auth()->user()->directories,
         ]);
     }
-})->name('all-bookmarks');
+})->name('bookmarks');
 
 // Log out
 Route::get('/sidebar', function () { return redirect(route('logout')); })->name('sidebar');
+
+// Views
+// Link views
+
+// Directories views
+
+// Tags views
+Route::get('/tags', function () { 
+    return view( 'user-app.tags', ['tags' => auth()->user()->tags,] );
+})->name('tags');
 
 // Create link
 /*
@@ -73,8 +84,8 @@ Route::post('/new-tag', [TagController::class, 'create'])->name('create-tag');
 
 
 // Edit link
-// Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
-// Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
+Route::get('/bookmark/{id}', [LinkController::class, 'edit'])->name('edit-link');
+Route::post('/bookmark/{id}', [LinkController::class, 'update'])->name('update-link');
 
 // Edit directory
 // Route::get('/directory/{id}', [DirectoryController::class, 'edit'])->name('edit-directory');

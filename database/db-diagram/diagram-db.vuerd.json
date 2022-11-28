@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -507.4999798337622,
-    "scrollLeft": -592.1999886751184,
-    "zoomLevel": 0.3,
+    "scrollTop": -63.333330816691905,
+    "scrollLeft": -411.6666503085038,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -232,10 +232,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 266.6671,
           "top": 1185.2132,
-          "zIndex": 30,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
         },
@@ -247,7 +247,7 @@
         "comment": "",
         "columns": [
           {
-            "name": "id_direcotory",
+            "name": "direcotory_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -366,7 +366,7 @@
           "active": false,
           "left": 1041.9797,
           "top": 1212.3223,
-          "zIndex": 29,
+          "zIndex": 16,
           "widthName": 68.36505126953125,
           "widthComment": 60
         },
@@ -426,9 +426,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1045.5985,
-          "top": 127.6515,
-          "zIndex": 26,
+          "left": 1046.9871,
+          "top": 102.6518,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -440,7 +440,7 @@
         "comment": "",
         "columns": [
           {
-            "name": "id_link",
+            "name": "link_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -486,7 +486,7 @@
             "id": "1698928b-8910-4866-b3cd-db6b34983fc2"
           },
           {
-            "name": "id_type",
+            "name": "type_id",
             "comment": "Types of links: audio, article, image, rss, video",
             "dataType": "SERIAL",
             "default": "",
@@ -697,7 +697,7 @@
           "active": false,
           "left": 1006.7672,
           "top": 785.8604,
-          "zIndex": 28,
+          "zIndex": 19,
           "widthName": 60,
           "widthComment": 60
         },
@@ -709,7 +709,7 @@
         "comment": "",
         "columns": [
           {
-            "name": "tag_id_link",
+            "name": "tag_link_id",
             "comment": "",
             "dataType": "SERIAL",
             "default": "",
@@ -782,7 +782,7 @@
           "active": false,
           "left": 1055.1954,
           "top": 444.9255,
-          "zIndex": 27,
+          "zIndex": 25,
           "widthName": 65.34906005859375,
           "widthComment": 60
         },
@@ -1297,8 +1297,8 @@
           "columnIds": [
             "ee232b6a-e4b5-4400-9459-d949f680b4e8"
           ],
-          "x": 1230.39204095459,
-          "y": 237.6515,
+          "x": 1231.78064095459,
+          "y": 212.65179999999998,
           "direction": "bottom"
         },
         "end": {

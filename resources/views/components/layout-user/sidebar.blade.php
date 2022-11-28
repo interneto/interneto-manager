@@ -31,7 +31,7 @@
     <!-- Collections -->
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="{{route('all-bookmarks')}}" class="nav-link active" aria-current="page">
+            <a href="{{route('bookmarks')}}" class="nav-link active" aria-current="page">
                 All bookmarks
             </a>
         </li>
@@ -42,36 +42,19 @@
             </a>
         </li>
         @endforeach
+    
+        <!-- Tags -->
+        <li>
+            <a href="{{route('tags')}}" class="nav-link active" aria-current="page">
+                Tags
+            </a>
+        </li>
 
+        <!-- Graph view -->
         <li>
             <a class="nav-link" href="#">
                 Graph view
             </a>
         </li>
-
-        <li>
-            <a class="nav-link" href="#">
-                Tags
-            </a>
-        </li>
     </ul>
-
-    <!-- Types -->
-    <!--
-        <div class="types">
-            <div class="audios">
-                Audios
-            </div>
-            <div class="documents">
-                Documents
-            </div>
-            <div class="images">
-                Images
-            </div>
-            <div class="videos">
-                Videos
-            </div>
-        </div>
-    -->
-
 </div>
