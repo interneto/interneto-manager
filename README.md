@@ -11,24 +11,30 @@ Classify links is the best way to organize the information and make your own inn
 
 **Information** is just the **in**side **formation** with external data to create valuable knowledge.
 
-
-This is a project in Laravel a framework of PHP that uses the architectural pattern *Model-View-Controller*
+This is project is made in **Laravel** a framework of **PHP** that uses the architectural pattern *Model-View-Controller*, the DBMS (Database Management System) is **PostgresSQL** and the web-server is **Nginx**.
 
 ### Initialize project in Laravel
 
-1.1. Create a new Laravel application, configure your database, and run your database migrations
-`composer create-project laravel/laravel interneto-project`
-
-- Install Laravel Breeze using Composer: `composer require laravel/breeze --dev`
+0. If you want to create a new Laravel application run:
 ```sh
+composer create-project laravel/laravel interneto-manager
+composer require laravel/breeze --dev
+```
+
+2. Clone the repository `git clone https://github.com/internet0/interneto-manager`
+
+- Install dependencies:
+```sh
+composer install  # vendor and the dependencies
+
 php artisan breeze:install # also with vue / react 
 php artisan migrate
+# php artisan db:seed
+
 npm install
 npm run dev
 ```
 
-1.2. Cloning the repository `git clone https://github.com/internet0/interneto-manager`
-- Install vendor and the dependencies with `composer install`
 - Copy the environment example .env.example to .env (`cp .env.example .env`) and edit the configuration of the .env file with the same configuration as docker:
 ```
 DB_CONNECTION=pgsql
@@ -38,17 +44,19 @@ DB_DATABASE=postgres
 DB_USERNAME=postgres
 DB_PASSWORD=postgres
 ```
-- Uncomment the the lines to use postgres (`extension=pdo_pgsql` `extension=pgsql`) of php.ini in php folder to use that database management system
+Uncomment the the lines in the file 'php/php.ini' to use Postgres SQL (`extension=pdo_pgsql` `extension=pgsql`).
 
-2. Now you need to create the database to store the data, you can use:
-- A container with docker. Make `docker compose up -d` to the file docker.compose.yml
-- A virtual machine with a server like CentOS, Ubuntu Server, etc
-- LAMPP (Apache, MySQL, PHPMyAdmin and PHP)
-- XAMPP (Apache-server, MariaDB, PHP and Perl-programming)
+2. Configure the backend
+To create and use the database as backend, yo need web server (Apache or Ngnix) and a database management system (MySQL, PostgresSQL). To install the server you can choose between Docker containers, virtual or real machine as W/LAMPP:
 
-3. After the project has been created, start Laravel's local development server using: `php artisan serve`
+With Docker using [docker-compose.yml](docker-compose.yml):
+```bash
+docker-compose up -d
+```
+
+3. To start Laravel local development use:
+```sh
+php artisan serve
+```
 
 4. Once you have started the Artisan development server, your application will be accessible in your web browser at http://localhost:8000. 
-
-
-
