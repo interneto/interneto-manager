@@ -63,16 +63,16 @@ extension=pdo_pgsql
 extension=pgsql
 ```
 
-- Use the same config in [config/database.php](config/database.php)
+- In [config/database.php](config/database.php) live as default. It is not necessary to use database, username and password for internal database.
 ```
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            //'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'postgres'),
-            'username' => env('DB_USERNAME', 'postgres'),
-            'password' => env('DB_PASSWORD', 'postgres'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -114,11 +114,6 @@ composer update
 npm install
 ```
 
-- Compile and bundle your frontend assets (such as JavaScript, CSS, and images) for development
-```sh
-npm run dev
-```
-
 ### 4. Develop in laravel with "php artisan"
 - If you want to set up the authentication scaffolding Laravel Breeze provides (routes, views, controllers) with different ecosystems (blade, react, vue, api). **Do not run this command** if you clone the repo this overwrite data.
 ```sh
@@ -140,15 +135,18 @@ php artisan migrate
 # php artisan db:seed
 ```
 
-### 4. Start Laravel local development
+### 5. Start Laravel local development
+- Compile and bundle your frontend assets (such as JS, CSS, images) for development
+```sh
+npm run dev
+```
+
 - To start Laravel local development use.
 ```sh
 php artisan serve
 ```
 
 - Once you have started the Artisan development server, your application will be accessible in your web browser at http://localhost:8000.
-
-
 
 --- 
 
@@ -202,3 +200,7 @@ php artisan make:test MyTest
 ```
 
 - [Laravel Sail](https://laravel.com/docs/10.x/sail) is a light-weight command-line interface for interacting with Laravel's default Docker development environment. Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
+
+## Extra
+Interneto manager right now is a mix of blog  + manager app. To use the app you need firstly to register with (name, email, password).
+
