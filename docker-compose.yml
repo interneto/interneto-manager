@@ -4,9 +4,12 @@ services:
     image: postgres:14.1-alpine
     restart: always
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres            # ${DB_DATABASE}
+      - POSTGRES_USER=postgres          # ${DB_USERNAME}
+      - POSTGRES_PASSWORD=postgres      # ${DB_PASSWORD}
+    # - POSTGRES_ROOT_PASSWORD=postgres # ${DB_ROOT_PASSWORD}
+    # - POSTGRES_ALLOW_EMPTY_PASSWORD=
+
     ports:
       - '5432:5432'
     volumes: 
