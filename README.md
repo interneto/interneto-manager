@@ -5,20 +5,23 @@ Interneto manager is a sel-hosted bookmark manager to store and save URI links f
 
 The purpose is to permit the user to make a database of related links with valuable information to generate a Personal Knowledge System.
 
-You should be able to:
-- Use locally (offline) or in a remote server (online). ✅
+**Information** is just the data with **in**side **formation**, the data that forms you internally. To create knowledge you need to classify this information.
+
+*Pass from the Internet to the InnerNet*
+
+## Features
+> To use the app you need firstly to register with (name, email, password)
+- Self-hosted: locally (offline) or remotely server (online). ✅
 - Classify links with parent folders and tags. ✅
 - Sort links by name, date and tags. ❌ NOT IMPLEMENTED
 - Import / export database of links. ❌ NOT IMPLEMENTED
 
 ## Development project
-
 This is project is made with **Laravel** a full-stack framework written in **PHP** that uses the architectural pattern *Model-View-Controller* and permit the creation of complete web apps (frontend + backend). 
 
 The backend runs in two **Docker** containers: onw with **PostgreSQL** as DBMS (Database Management System) and another with **Adminer** as a tool for managing databases.
 
 ## Steps to build the app
-
 Before creating the Laravel project, you need to install in your system:
 	"docker, postgresql, php, composer, nodejs, npm"
 - In Windows: `winget install Docker.DockerDesktop PostgreSQL.PostgreSQL ApacheFriends.Xampp.8.2 OpenJS.NodeJS` + [install composer](https://getcomposer.org/download/)
@@ -187,28 +190,28 @@ php artisan serve
 ---
 
 ### Build app locally after configure
+Every time you want to build the app and serve locally you have to up the Docker containers, compile and bundle your frontend assets and serve Laravel. Here's the script to serve [serve.sh](serve.sh) with these three commands:
 
-Every time you want to build the app locally you have to up the Docker containers, compile and bundle your frontend assets and serve Laravel
 ```sh
+# 1. Create docker containers
 docker compose up -d
+
+# 2. Run development environment for node
 npm run dev
+
+# 3. Serve the web locally with php artisan
 php artisan serve
 ```
 
-> npm runs in one shell serving the frontend and php artisan runs in another shell
-
-
 ---
 
-### Other php commands
+### php artisan commands
 
 ```sh
-# Clear cache, clear config
+# Clear cache, config, view
 php artisan cache:clear
 php artisan config:clear
-
-# Run seeders
-php artisan db:seed
+php artisan view:clear
 
 # Generate application key
 php artisan key:generate
@@ -216,19 +219,37 @@ php artisan key:generate
 # Run migrations
 php artisan migrate
 
-# Create a controller, model, migration
-php artisan make:controller MyController
+# Create a controller, resourceful controller, model, migration, seeder, middleware, Blade view, factory, test
+# where my is the name of the table
+# *order of laravel edition: model, migration, middleware, seeder, factory, view, controller, test*
 php artisan make:model MyModel
 php artisan make:migration create_table_name
-
-# Create a seeder, middleware, Blade view, resourceful controller, factory, test
 php artisan make:seeder MySeeder
 php artisan make:middleware MyMiddleware
 php artisan make:view myview
-php artisan make:controller MyResourceController --resource
 php artisan make:factory MyFactory
+php artisan make:controller MyController
+php artisan make:controller MyResourceController --resource
 php artisan make:test MyTest
+
+# Run seeders
+php artisan db:seed
 
 # Start the development server
 php artisan serve
 ```
+
+To completely remove the database and create it again in Laravel:
+```bash
+# 1. Drop the Database
+php artisan migrate:reset
+
+# 2. Create a New Database
+php artisan migrate:refresh --seed
+
+# 3. Run Migrations and Seeders (Optional)
+php artisan migrate
+php artisan db:seed
+```
+
+- [Laravel Sail](https://laravel.com/docs/10.x/sail) is a light-weight command-line interface for interacting with Laravel's default Docker development environment. Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
