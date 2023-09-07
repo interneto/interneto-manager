@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/about', function() { return view('preview.about'); })->name('about');
 
 // Authenticate to interneto manager app
-Route::get('/', function () { return redirect(route('bookmarks')); })
-    ->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', function () { return redirect(route('bookmarks')); });
+    //->middleware(['auth', 'verified'])->name('dashboard');
 
 // If user is not logged redirect to login if not show all bookmarks 
 Route::get('/bookmarks', function () {
