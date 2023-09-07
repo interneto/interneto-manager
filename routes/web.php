@@ -18,28 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Preview of webpage
-Route::get('/', function() { return view('preview.home'); })->name('home');
-Route::get('/app', function() { return view('preview.interneto-app'); })->name('interneto-app');
-Route::get('/links', function() { return view('preview.interneto-links'); })->name('interneto-links');
-Route::get('/blog', function() { return view('preview.blog'); })->name('blog');
-Route::get('/about', function() { return view('preview.about'); })->name('about');
-
-// Views blog articles
-Route::get('/blog/articles/categorize-links', function() { 
-    return view('preview.articles.categorize-links'); 
-})->name('cat-links');
-
-Route::get('/blog/articles/information-to-knwoledge', function() { 
-    return view('preview.articles.information-to-knwoledge'); 
-})->name('info-to-know');
-
-Route::get('/blog/articles/comparing-bookmark-maangers', function() { 
-    return view('preview.articles.comparing-bookmark-managers'); 
-})->name('comparing-bookmark-managers');
-
+//Route::get('/', function() { return view('preview.home'); })->name('home');
+//Route::get('/app', function() { return view('preview.interneto-app'); })->name('interneto-app');
+//Route::get('/links', function() { return view('preview.interneto-links'); })->name('interneto-links');
+//Route::get('/blog', function() { return view('preview.blog'); })->name('blog');
+//Route::get('/about', function() { return view('preview.about'); })->name('about');
 
 // Authenticate to interneto manager app
-Route::get('/dashboard', function () { return redirect(route('bookmarks')); })
+Route::get('/', function () { return redirect(route('bookmarks')); })
     ->middleware(['auth', 'verified'])->name('dashboard');
 
 // If user is not logged redirect to login if not show all bookmarks 
