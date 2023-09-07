@@ -2,6 +2,6 @@
 
 docker compose up -d
 
-npm run build
+npm run dev
 
 php artisan serve
