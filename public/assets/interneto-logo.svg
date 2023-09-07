@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg width="210mm" height="297mm"
+<svg
+   width="210mm"
+   height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
@@ -184,5 +186,4 @@ rJ7USpyBVGose5VCSlRjGhbgUvQ9J0nXP4P/2Q==
        style="opacity:0.984849;fill:#181c49;fill-opacity:0.875458;stroke:#000000;stroke-width:0.791148;stroke-opacity:0.831502"
        d="m 33.774221,202.27411 -0.618317,-3.06686 3.685184,-5.83692 66.260772,-94.737174 0.27982,-2.86815 -1.95874,-0.48968 -5.246614,0.83946 -6.57575,3.21792 -0.9094,1.329144 0.41972,1.67891 2.09865,-0.1399 1.04932,-0.41973 -1.32914,2.44841 -60.633292,85.72082 -1.836322,4.10111 -0.324309,-0.86492 -4.362667,-7.73952 -1.256267,0.24588 1.892419,3.75719 8.66008,13.57958 z"
        id="path5207"
-       sodipodi:nodetypes="ccccccccccccccccccccc" /></g>
-  </svg>
+       sodipodi:nodetypes="ccccccccccccccccccccc" /></g></svg>
