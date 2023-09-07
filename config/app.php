@@ -15,6 +15,7 @@ return [
     |
     */
 
+    // rename
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
