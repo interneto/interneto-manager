@@ -17,7 +17,7 @@ class DirectoryController extends Controller
     public function create(Request $request) {
         //dd($request);
         $validated = $request->validate([
-            "directory_id" => "max:255",
+            "id" => "max:255",
             "name" => "required|max:255|unique:directories,name",
         ]);
 
@@ -28,6 +28,7 @@ class DirectoryController extends Controller
         return redirect(route('bookmarks'));
     }
 
+    /*
     public function edit(Directory $directory) {
 
         $directory = Directory::findOrFail($directory->id);
@@ -42,8 +43,8 @@ class DirectoryController extends Controller
 
     public function update(Request $request, Directory $directory) {
         $validated = $request->validate([
+            "id" => "max:255",
             "name" => "required|max:255|unique:directories,name",
-            "directory_id" => "max:255",
         ]);
 
         $directory->update($validated);
@@ -56,4 +57,5 @@ class DirectoryController extends Controller
 
         return view('user-app.bookmarks');
     }
+    */
 }
