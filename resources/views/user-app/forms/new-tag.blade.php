@@ -1,16 +1,15 @@
 <x-layout-manager :directories="$directories">
 
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+
     <form action="{{ route('create-tag') }}" method="post">
         @csrf
-
-        <select name="tag_id" id="tag_id" class="form-select">
-            <option value="">-- Select a tag --</option>
-            @foreach ($tags as $tag)
-            <option value="{{ $tag->id }}" {{ $tag->id == old('tag_id') ? 'selected' : '' }}>
-                {{ $tag->name }}
-            </option>
-            @endforeach
-        </select>
 
         <div>
             <input type="text" class="form-control h-100" name="name" id="name" placeholder="Tag" value="{{ old('name') }}">
